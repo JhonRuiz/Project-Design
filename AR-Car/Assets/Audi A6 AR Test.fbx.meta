@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: 714542e1b264e4846917d6ac0fd46dba
+timeCreated: 1512518237
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AO Floor Shadow
+    100002: //RootNode
+    100004: Body
+    100006: Door Front L
+    100008: Door Front R
+    100010: Door Rear L
+    100012: Door Rear R
+    100014: Headlight Left
+    100016: Headlight RIght
+    100018: Wheel Front L
+    100020: Wheel Front R
+    400000: AO Floor Shadow
+    400002: //RootNode
+    400004: Body
+    400006: Door Front L
+    400008: Door Front R
+    400010: Door Rear L
+    400012: Door Rear R
+    400014: Headlight Left
+    400016: Headlight RIght
+    400018: Wheel Front L
+    400020: Wheel Front R
+    2300000: AO Floor Shadow
+    2300002: Body
+    2300004: Door Front L
+    2300006: Door Front R
+    2300008: Door Rear L
+    2300010: Door Rear R
+    2300012: Wheel Front L
+    2300014: Wheel Front R
+    3300000: AO Floor Shadow
+    3300002: Body
+    3300004: Door Front L
+    3300006: Door Front R
+    3300008: Door Rear L
+    3300010: Door Rear R
+    3300012: Wheel Front L
+    3300014: Wheel Front R
+    4300000: Wheel Front L
+    4300002: Wheel Front R
+    4300004: Door Rear L
+    4300006: Door Front L
+    4300008: Door Front R
+    4300010: Door Rear R
+    4300012: AO Floor Shadow
+    4300014: Body
+    7400000: Wheel Front L|Door Front L Open & Close
+    7400002: Wheel Front L|Door Rear L Open & Close
+    7400004: Wheel Front L|Door Rear R Open & Close
+    7400006: Wheel Front L|DoorFront R Open & Close
+    7400008: Wheel Front L|Front Wheels to Left.001
+    7400010: Wheel Front L|Front Wheels to Right
+    7400012: Wheel Front L|Front Wheels to Left
+    7400014: Wheel Front L|Front Wheels to Right.001
+    7400016: Wheel Front L|Front Wheels Turning R
+    7400018: Wheel Front L|Front Wheels Turning R.001
+    7400020: Wheel Front L|Front Wheels Turning R.002
+    7400022: Wheel Front L|Wheel Front LAction
+    7400024: Wheel Front R|Door Front L Open & Close
+    7400026: Wheel Front R|Door Rear L Open & Close
+    7400028: Wheel Front R|Door Rear R Open & Close
+    7400030: Wheel Front R|DoorFront R Open & Close
+    7400032: Wheel Front R|Front Wheels to Left.001
+    7400034: Wheel Front R|Front Wheels to Right
+    7400036: Wheel Front R|Front Wheels to Left
+    7400038: Wheel Front R|Front Wheels to Right.001
+    7400040: Wheel Front R|Front Wheels Turning R
+    7400042: Wheel Front R|Front Wheels Turning R.001
+    7400044: Wheel Front R|Front Wheels Turning R.002
+    7400046: Wheel Front R|Wheel Front LAction
+    7400048: Door Rear L|Door Front L Open & Close
+    7400050: Door Rear L|Door Rear L Open & Close
+    7400052: Door Rear L|Door Rear R Open & Close
+    7400054: Door Rear L|DoorFront R Open & Close
+    7400056: Door Rear L|Front Wheels to Left.001
+    7400058: Door Rear L|Front Wheels to Right
+    7400060: Door Rear L|Front Wheels to Left
+    7400062: Door Rear L|Front Wheels to Right.001
+    7400064: Door Rear L|Front Wheels Turning R
+    7400066: Door Rear L|Front Wheels Turning R.001
+    7400068: Door Rear L|Front Wheels Turning R.002
+    7400070: Door Rear L|Wheel Front LAction
+    7400072: Door Front L|Door Front L Open & Close
+    7400074: Door Front L|Door Rear L Open & Close
+    7400076: Door Front L|Door Rear R Open & Close
+    7400078: Door Front L|DoorFront R Open & Close
+    7400080: Door Front L|Front Wheels to Left.001
+    7400082: Door Front L|Front Wheels to Right
+    7400084: Door Front L|Front Wheels to Left
+    7400086: Door Front L|Front Wheels to Right.001
+    7400088: Door Front L|Front Wheels Turning R
+    7400090: Door Front L|Front Wheels Turning R.001
+    7400092: Door Front L|Front Wheels Turning R.002
+    7400094: Door Front L|Wheel Front LAction
+    7400096: Door Front R|Door Front L Open & Close
+    7400098: Door Front R|Door Rear L Open & Close
+    7400100: Door Front R|Door Rear R Open & Close
+    7400102: Door Front R|DoorFront R Open & Close
+    7400104: Door Front R|Front Wheels to Left.001
+    7400106: Door Front R|Front Wheels to Right
+    7400108: Door Front R|Front Wheels to Left
+    7400110: Door Front R|Front Wheels to Right.001
+    7400112: Door Front R|Front Wheels Turning R
+    7400114: Door Front R|Front Wheels Turning R.001
+    7400116: Door Front R|Front Wheels Turning R.002
+    7400118: Door Front R|Wheel Front LAction
+    7400120: Door Rear R|Door Front L Open & Close
+    7400122: Door Rear R|Door Rear L Open & Close
+    7400124: Door Rear R|Door Rear R Open & Close
+    7400126: Door Rear R|DoorFront R Open & Close
+    7400128: Door Rear R|Front Wheels to Left.001
+    7400130: Door Rear R|Front Wheels to Right
+    7400132: Door Rear R|Front Wheels to Left
+    7400134: Door Rear R|Front Wheels to Right.001
+    7400136: Door Rear R|Front Wheels Turning R
+    7400138: Door Rear R|Front Wheels Turning R.001
+    7400140: Door Rear R|Front Wheels Turning R.002
+    7400142: Door Rear R|Wheel Front LAction
+    7400144: Body|Door Front L Open & Close
+    7400146: Body|Door Rear L Open & Close
+    7400148: Body|Door Rear R Open & Close
+    7400150: Body|DoorFront R Open & Close
+    7400152: Body|Front Wheels to Left.001
+    7400154: Body|Front Wheels to Right
+    7400156: Body|Front Wheels to Left
+    7400158: Body|Front Wheels to Right.001
+    7400160: Body|Front Wheels Turning R
+    7400162: Body|Front Wheels Turning R.001
+    7400164: Body|Front Wheels Turning R.002
+    7400166: Body|Wheel Front LAction
+    9500000: //RootNode
+    10800000: Headlight Left
+    10800002: Headlight RIght
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 019275a19822b7848bc69b9bb3003e54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome
+    second: {fileID: 2100000, guid: ca8011dca0657914c8eb8b268a93b07e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Plastic
+    second: {fileID: 2100000, guid: 04b25438fef1ed446a3249a7e845c14d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shadow AO
+    second: {fileID: 2100000, guid: d626e4efa63a82d43bb69f3a7cdf070b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Transparent Glass
+    second: {fileID: 2100000, guid: c732d24851cda9943b59b81e6a4cb9fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheel
+    second: {fileID: 2100000, guid: 8d7d570605b860b478a027acd4de6ec5, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
