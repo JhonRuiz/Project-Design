@@ -86,14 +86,15 @@ namespace Lean.Touch
 
                     door_front_r = this.gameObject.transform.GetChild(3);
                     door_front_r.transform.localRotation *= Quaternion.Euler(0, 0, -50);
+                    door_front_r.transform.localPosition = new Vector3(0.26f, 0.02086362f, -0.20f);
 
                     door_back_l = this.gameObject.transform.GetChild(4);
                     door_back_l.transform.localRotation *= Quaternion.Euler(0, 0, 50);
-                    // door_back_l.transform.localPosition = new Vector3(0.0f, 0.0f, 0.129f);
+                    //door_back_l.transform.localPosition = new Vector3(0.0f, 0.0f, 0.129f);
 
                     door_back_r = this.gameObject.transform.GetChild(5);
                     door_back_r.transform.localRotation *= Quaternion.Euler(0, 0, -50);
-                    door_back_r.transform.localPosition = new Vector3(0.0f, 0.0f, -0.129f);
+                    door_back_r.transform.localPosition = new Vector3(-0.164994f, 0.02086362f, -0.35f);
                     doorsOpen = true;
 
                 }
@@ -104,14 +105,15 @@ namespace Lean.Touch
 
                     door_front_r = this.gameObject.transform.GetChild(3);
                     door_front_r.transform.localRotation *= Quaternion.Euler(0, 0, 50);
+                    door_front_r.transform.localPosition = new Vector3(-0.164994f, 0.02086362f, -0.05554854f);
 
                     door_back_l = this.gameObject.transform.GetChild(4);
                     door_back_l.transform.localRotation *= Quaternion.Euler(0, 0, -50);
-                    // door_back_l.transform.localPosition = new Vector3(0.0f, 0.0f, 0.129f);
+                    //door_back_l.transform.localPosition = new Vector3(0.0f, 0.0f, 0.129f);
 
                     door_back_r = this.gameObject.transform.GetChild(5);
                     door_back_r.transform.localRotation *= Quaternion.Euler(0, 0, 50);
-                    door_back_r.transform.localPosition = new Vector3(0.000524233f, 0.008214021f, -0.0001731778f);
+                    door_back_r.transform.localPosition = new Vector3(-0.164994f, 0.02086362f, -0.05554854f);
                     doorsOpen = false;
                 }
             }
