@@ -1,0 +1,214 @@
+fileFormatVersion: 2
+guid: bad4d78a0e4a57942a24495cf920111a
+timeCreated: 1516056550
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Door L
+    100002: Door R
+    100004: //RootNode
+    100006: Knob L
+    100008: Knob R
+    100010: Main Body
+    100012: Main Body_MeshPart0
+    100014: Main Body_MeshPart1
+    100016: Wheel Front L
+    100018: Wheels Front R
+    100020: Wheels Rear
+    400000: Door L
+    400002: Door R
+    400004: //RootNode
+    400006: Knob L
+    400008: Knob R
+    400010: Main Body
+    400012: Main Body_MeshPart0
+    400014: Main Body_MeshPart1
+    400016: Wheel Front L
+    400018: Wheels Front R
+    400020: Wheels Rear
+    2300000: Door L
+    2300002: Door R
+    2300004: Knob L
+    2300006: Knob R
+    2300008: Main Body_MeshPart0
+    2300010: Main Body_MeshPart1
+    2300012: Wheel Front L
+    2300014: Wheels Front R
+    2300016: Wheels Rear
+    3300000: Door L
+    3300002: Door R
+    3300004: Knob L
+    3300006: Knob R
+    3300008: Main Body_MeshPart0
+    3300010: Main Body_MeshPart1
+    3300012: Wheel Front L
+    3300014: Wheels Front R
+    3300016: Wheels Rear
+    4300000: Wheels Front R
+    4300002: Wheel Front L
+    4300004: Wheels Rear
+    4300006: Door L
+    4300008: Knob L
+    4300010: Door R
+    4300012: Knob R
+    4300014: Main Body_MeshPart0
+    4300016: Main Body_MeshPart1
+    7400000: Door L|Left Door
+    7400002: Door L|Right Door
+    7400004: Door R|Left Door
+    7400006: Door R|Right Door
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 5ed101de0f47c744ca97cf950e3e5997, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome
+    second: {fileID: 2100000, guid: ca8011dca0657914c8eb8b268a93b07e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome Orange
+    second: {fileID: 2100000, guid: e5054cc9a5fede24090d7734062451f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome Red
+    second: {fileID: 2100000, guid: 1457ced5c7bfe3349a9591a8308560fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Plastic
+    second: {fileID: 2100000, guid: 04b25438fef1ed446a3249a7e845c14d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive
+    second: {fileID: 2100000, guid: ad6c4ab4cf4a9e34188a6e6724142707, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive (Red)
+    second: {fileID: 2100000, guid: 2a41fb67b0127dc4c80f12d8b11d249d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interior
+    second: {fileID: 2100000, guid: ab9ff0a70f041fe45b895e8095977cc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: License Plate
+    second: {fileID: 2100000, guid: 23860ba8270c98c4fbd643d10a773da5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Reflective Mirror
+    second: {fileID: 2100000, guid: a9decc70eb4570a4181f68caba17c63e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spoiler (Wing)
+    second: {fileID: 2100000, guid: 755e9f109fc498e44a67b56a6ec920a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tire
+    second: {fileID: 2100000, guid: 67c341d27403bc84fae15f45b0e8f17a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Transparent Glass
+    second: {fileID: 2100000, guid: c732d24851cda9943b59b81e6a4cb9fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Under
+    second: {fileID: 2100000, guid: 3d2741c9628338c4aa1d96b00b74288d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheels
+    second: {fileID: 2100000, guid: 6b3125b84908ee14ba73a08445ab50d6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
