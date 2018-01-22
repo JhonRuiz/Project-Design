@@ -16,6 +16,21 @@ ModelImporter:
     100016: Headlight RIght
     100018: Wheel Front L
     100020: Wheel Front R
+    100022: Body Details
+    100024: Door Front Left
+    100026: Door Front Right
+    100028: Door Rear Left
+    100030: Door Rear Right
+    100032: Front Headlights
+    100034: Interior
+    100036: Knob Front Left
+    100038: Knob Front Right
+    100040: Knob Rear Left
+    100042: Knob Rear Right
+    100044: Main Body
+    100046: Spot
+    100048: Spot.001
+    100050: Wheels Rear
     400000: AO Floor Shadow
     400002: //RootNode
     400004: Body
@@ -27,6 +42,21 @@ ModelImporter:
     400016: Headlight RIght
     400018: Wheel Front L
     400020: Wheel Front R
+    400022: Body Details
+    400024: Door Front Left
+    400026: Door Front Right
+    400028: Door Rear Left
+    400030: Door Rear Right
+    400032: Front Headlights
+    400034: Interior
+    400036: Knob Front Left
+    400038: Knob Front Right
+    400040: Knob Rear Left
+    400042: Knob Rear Right
+    400044: Main Body
+    400046: Spot
+    400048: Spot.001
+    400050: Wheels Rear
     2300000: AO Floor Shadow
     2300002: Body
     2300004: Door Front L
@@ -35,6 +65,19 @@ ModelImporter:
     2300010: Door Rear R
     2300012: Wheel Front L
     2300014: Wheel Front R
+    2300016: Body Details
+    2300018: Door Front Left
+    2300020: Door Front Right
+    2300022: Door Rear Left
+    2300024: Door Rear Right
+    2300026: Front Headlights
+    2300028: Interior
+    2300030: Knob Front Left
+    2300032: Knob Front Right
+    2300034: Knob Rear Left
+    2300036: Knob Rear Right
+    2300038: Main Body
+    2300040: Wheels Rear
     3300000: AO Floor Shadow
     3300002: Body
     3300004: Door Front L
@@ -43,6 +86,19 @@ ModelImporter:
     3300010: Door Rear R
     3300012: Wheel Front L
     3300014: Wheel Front R
+    3300016: Body Details
+    3300018: Door Front Left
+    3300020: Door Front Right
+    3300022: Door Rear Left
+    3300024: Door Rear Right
+    3300026: Front Headlights
+    3300028: Interior
+    3300030: Knob Front Left
+    3300032: Knob Front Right
+    3300034: Knob Rear Left
+    3300036: Knob Rear Right
+    3300038: Main Body
+    3300040: Wheels Rear
     4300000: Wheel Front L
     4300002: Wheel Front R
     4300004: Door Rear L
@@ -51,6 +107,19 @@ ModelImporter:
     4300010: Door Rear R
     4300012: AO Floor Shadow
     4300014: Body
+    4300016: Wheels Rear
+    4300018: Main Body
+    4300020: Door Rear Right
+    4300022: Knob Rear Right
+    4300024: Door Front Right
+    4300026: Knob Front Right
+    4300028: Door Rear Left
+    4300030: Knob Rear Left
+    4300032: Interior
+    4300034: Body Details
+    4300036: Door Front Left
+    4300038: Knob Front Left
+    4300040: Front Headlights
     7400000: Wheel Front L|Door Front L Open & Close
     7400002: Wheel Front L|Door Rear L Open & Close
     7400004: Wheel Front L|Door Rear R Open & Close
@@ -135,9 +204,12 @@ ModelImporter:
     7400162: Body|Front Wheels Turning R.001
     7400164: Body|Front Wheels Turning R.002
     7400166: Body|Wheel Front LAction
+    7400168: Take 001
     9500000: //RootNode
     10800000: Headlight Left
     10800002: Headlight RIght
+    10800004: Spot
+    10800006: Spot.001
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -157,13 +229,48 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Emissive [Bulb]
+    second: {fileID: 2100000, guid: e04c4ba975d4596488b0478b98c72c08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interior
+    second: {fileID: 2100000, guid: ab9ff0a70f041fe45b895e8095977cc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: License Plate
+    second: {fileID: 2100000, guid: 42588d8d8d4fb544a8afc6bfb5cdf8f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Reflective Mirror
+    second: {fileID: 2100000, guid: a9decc70eb4570a4181f68caba17c63e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Shadow AO
     second: {fileID: 2100000, guid: d626e4efa63a82d43bb69f3a7cdf070b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Taillght Frame
+    second: {fileID: 2100000, guid: e99be99bf4fffbb4787aa4eac30d26c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tire
+    second: {fileID: 2100000, guid: 67c341d27403bc84fae15f45b0e8f17a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Transparent Glass
     second: {fileID: 2100000, guid: c732d24851cda9943b59b81e6a4cb9fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Under
+    second: {fileID: 2100000, guid: 3d2741c9628338c4aa1d96b00b74288d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -211,6 +318,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
