@@ -12,8 +12,8 @@ public class CarSelector : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         a6.SetActive(true);
-        cube.SetActive(true);
-        sphere.SetActive(true);
+        cube.SetActive(false);
+        sphere.SetActive(false);
 
         carSelected = 1;
    
