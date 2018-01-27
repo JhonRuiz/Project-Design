@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: aa11f1d3a23860442b03224721153a9c
-timeCreated: 1515084104
+timeCreated: 1516979730
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - a6: {fileID: 100002, guid: 714542e1b264e4846917d6ac0fd46dba, type: 3}
+  - cube: {instanceID: 0}
+  - gt86: {fileID: 100004, guid: bad4d78a0e4a57942a24495cf920111a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

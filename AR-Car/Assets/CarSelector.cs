@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarSelector : MonoBehaviour {
     public GameObject a6;
     public GameObject cube;
-    public GameObject sphere;
+    public GameObject gt86;
 
     public int carSelected;
 
@@ -13,7 +13,7 @@ public class CarSelector : MonoBehaviour {
 	void Start () {
         a6.SetActive(true);
         cube.SetActive(false);
-        sphere.SetActive(false);
+        gt86.SetActive(false);
 
         carSelected = 1;
    
@@ -23,7 +23,7 @@ public class CarSelector : MonoBehaviour {
     {
         a6.SetActive(true);
         cube.SetActive(false);
-        sphere.SetActive(false);
+        gt86.SetActive(false);
 
         carSelected = 1;
     }
@@ -32,16 +32,16 @@ public class CarSelector : MonoBehaviour {
     {
         a6.SetActive(false);
         cube.SetActive(true);
-        sphere.SetActive(false);
+        gt86.SetActive(false);
 
         carSelected = 2;
     }
 
-    public void loadSphere()
+    public void loadGT86()
     {
         a6.SetActive(false);
         cube.SetActive(false);
-        sphere.SetActive(true);
+        gt86.SetActive(true);
 
         carSelected = 3;
     }
