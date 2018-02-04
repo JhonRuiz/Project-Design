@@ -11,7 +11,11 @@ public class CarSelector : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        a6.SetActive(true);
+
+        a6 = GameObject.Find("Audi A6 AR Test");
+        cube = GameObject.Find("Cube");
+        gt86 = GameObject.Find("GT86 AR");
+        a6.SetActive(false);
         cube.SetActive(false);
         gt86.SetActive(false);
 
@@ -21,6 +25,7 @@ public class CarSelector : MonoBehaviour {
 
     public void loadA6()
     {
+        Globals.curentCar = 1;
         a6.SetActive(true);
         cube.SetActive(false);
         gt86.SetActive(false);
@@ -30,6 +35,7 @@ public class CarSelector : MonoBehaviour {
 
     public void loadCube()
     {
+        Globals.curentCar = 2;
         a6.SetActive(false);
         cube.SetActive(true);
         gt86.SetActive(false);
@@ -39,6 +45,7 @@ public class CarSelector : MonoBehaviour {
 
     public void loadGT86()
     {
+        Globals.curentCar = 3;
         a6.SetActive(false);
         cube.SetActive(false);
         gt86.SetActive(true);

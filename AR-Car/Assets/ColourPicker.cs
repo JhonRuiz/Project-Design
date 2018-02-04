@@ -10,7 +10,7 @@ public class ColourPicker : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        renderer = this.GetComponent<Renderer>();
+        
 
 	}
 	
@@ -18,10 +18,17 @@ public class ColourPicker : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void UpdateRenderer()
+    {
+        renderer = this.GetComponent<Renderer>();
+    }
     
     //render blue colour
     public void BlueColour()
     {
+        Globals.currentColour = 0;
+        UpdateRenderer();
         renderer.material = BodyColourMat[0];
         CurrMat = renderer.material;
     }
@@ -29,6 +36,8 @@ public class ColourPicker : MonoBehaviour {
     //render red colour
     public void RedColour()
     {
+        Globals.currentColour = 1;
+        UpdateRenderer();
         renderer.material = BodyColourMat[1];
         CurrMat = renderer.material;
     }
@@ -36,6 +45,8 @@ public class ColourPicker : MonoBehaviour {
     //render green colour
     public void GreenColour()
     {
+        Globals.currentColour = 2;
+        UpdateRenderer();
         renderer.material = BodyColourMat[2];
         CurrMat = renderer.material;
     }
@@ -43,6 +54,8 @@ public class ColourPicker : MonoBehaviour {
     //render yellow colour
     public void YellowColour()
     {
+        Globals.currentColour = 3;
+        UpdateRenderer();
         renderer.material = BodyColourMat[3];
         CurrMat = renderer.material;
     }
