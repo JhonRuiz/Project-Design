@@ -699,7 +699,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 402548829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.062000014, y: 0.16000001, z: -0.011999988}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 849381857}
@@ -870,6 +870,8 @@ MonoBehaviour:
   a6: {fileID: 1029289663}
   cube: {fileID: 849381853}
   gt86: {fileID: 1605069205}
+  gt86Body: {fileID: 998079270}
+  BodyColourMat: []
 --- !u!1 &509326931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,7 +1516,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998079270}
-  m_Mesh: {fileID: 4300014, guid: bad4d78a0e4a57942a24495cf920111a, type: 3}
+  m_Mesh: {fileID: 4300018, guid: bad4d78a0e4a57942a24495cf920111a, type: 3}
 --- !u!114 &998079274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1754,18 +1756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c23f7fe493aad448c8df7cf7f97eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textures: []
-  currentTexture: 0
-  oldMaterial: {r: 0, g: 0, b: 0, a: 0}
-  IgnoreIfOverGui: 0
-  IgnoreIfStartedOverGui: 0
-  RequiredTapCount: 0
-  RequiredTapInterval: 0
-  OnFingerTap:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Lean.Touch.Tap_Open_Door_Copy+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1362663221
 Prefab:
   m_ObjectHideFlags: 0

@@ -1,23 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ColourPicker : MonoBehaviour {
 
     public Material[] BodyColourMat;
     Material CurrMat;
     Renderer renderer;
+    Scene scene;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        scene = SceneManager.GetActiveScene();
         
+        if (scene.name == "AR_SCENE")
+        {
+            if (Globals.currentColour == 0)
+            {
+                BlueColour();
+            }
+            else if (Globals.currentColour == 1)
+            {
+                RedColour();
+            }
+            else if (Globals.currentColour == 2)
+            {
+                GreenColour();
+            }
+            else if (Globals.currentColour == 3)
+            {
+                YellowColour();
+            }
 
-	}
+
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+        
+    }
 
     void UpdateRenderer()
     {
@@ -27,6 +51,7 @@ public class ColourPicker : MonoBehaviour {
     //render blue colour
     public void BlueColour()
     {
+        
         Globals.currentColour = 0;
         UpdateRenderer();
         renderer.material = BodyColourMat[0];

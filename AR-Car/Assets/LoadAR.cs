@@ -7,7 +7,10 @@ public class LoadAR : MonoBehaviour {
     public GameObject a6;
     public GameObject cube;
     public GameObject gt86;
-
+    public GameObject gt86Body;
+    public Material[] BodyColourMat;
+    Material CurrMat;
+    Renderer renderer;
 
 
     // Use this for initialization
@@ -33,10 +36,15 @@ public class LoadAR : MonoBehaviour {
         {
             gt86.SetActive(true);
         }
+
+        
+            
+        
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
