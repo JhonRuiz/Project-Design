@@ -2837,7 +2837,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: v. 0.0.8 04-02-2018
+  m_Text: v. 0.0.10 05-02-2018
 --- !u!222 &1001896835
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4760,7 +4760,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1984972294}
-  m_Mesh: {fileID: 4300014, guid: bad4d78a0e4a57942a24495cf920111a, type: 3}
+  m_Mesh: {fileID: 4300018, guid: bad4d78a0e4a57942a24495cf920111a, type: 3}
 --- !u!4 &1984972298
 Transform:
   m_ObjectHideFlags: 0
