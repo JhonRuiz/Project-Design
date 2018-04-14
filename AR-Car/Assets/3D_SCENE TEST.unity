@@ -353,7 +353,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: 714542e1b264e4846917d6ac0fd46dba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -901.40625
+      value: -901.403
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 714542e1b264e4846917d6ac0fd46dba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2775,7 +2775,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 2
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 5ed101de0f47c744ca97cf950e3e5997, type: 2}
@@ -6423,8 +6423,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1942385012}
   - component: {fileID: 1942385013}
-  - component: {fileID: 1942385015}
-  - component: {fileID: 1942385014}
   m_Layer: 5
   m_Name: car_selector_interface
   m_TagString: Untagged
@@ -6468,49 +6466,6 @@ MonoBehaviour:
   cube: {fileID: 0}
   gt86: {fileID: 100004, guid: bad4d78a0e4a57942a24495cf920111a, type: 3}
   carSelected: 0
---- !u!114 &1942385014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1942385011}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Content: {fileID: 1646529157}
-  m_Horizontal: 1
-  m_Vertical: 0
-  m_MovementType: 1
-  m_Elasticity: 0.1
-  m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 10
-  m_Viewport: {fileID: 0}
-  m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 0
-  m_VerticalScrollbarVisibility: 0
-  m_HorizontalScrollbarSpacing: 0
-  m_VerticalScrollbarSpacing: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1942385015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1942385011}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
 --- !u!1 &1962622810
 GameObject:
   m_ObjectHideFlags: 0
