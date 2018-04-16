@@ -53,6 +53,7 @@ public class ButtonListControl : MonoBehaviour {
             cars.transform.GetChild(i).gameObject.SetActive(false);
         }
         car.SetActive(true);
+        Globals.curentCar = 1;
         canvas.GetComponent<menu>().ToggleCarSelector();
     }
 

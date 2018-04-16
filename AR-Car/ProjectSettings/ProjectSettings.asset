@@ -243,7 +243,7 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Projects/Project-Design/AR-Car/user.keystore
+  AndroidKeystoreName: C:/Users/me/Desktop/Project-Design/AR-Car/user.keystore
   AndroidKeyaliasName: release
   AndroidTVCompatibility: 0
   AndroidIsGame: 0
