@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641222, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -666,8 +666,8 @@ MonoBehaviour:
   - {fileID: 1529799843}
   - {fileID: 640257615}
   carBody: {fileID: 817406632}
-  carBodyTextureOffset: {x: 20, y: 20}
-  carDoorTextureOffset: {x: 0.1, y: 0.1}
+  carBodyTextureOffset: {x: 13, y: 13}
+  carDoorTextureOffset: {x: 0.088, y: 0.088}
 --- !u!65 &146863335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -843,6 +843,7 @@ GameObject:
   - component: {fileID: 283654621}
   - component: {fileID: 283654620}
   - component: {fileID: 283654619}
+  - component: {fileID: 283654622}
   m_Layer: 5
   m_Name: car_colour_option_two
   m_TagString: Untagged
@@ -947,6 +948,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 283654617}
+--- !u!114 &283654622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 283654617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923795818cdf85f4584378df8208355b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourButton: {fileID: 283654619}
+  materialController: {fileID: 1396539638}
+  material: {fileID: 2100000, guid: fcc846b592748c946bf4059546c7656e, type: 2}
 --- !u!4 &300349478 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400026, guid: 714542e1b264e4846917d6ac0fd46dba, type: 3}
@@ -963,6 +978,7 @@ GameObject:
   - component: {fileID: 311937597}
   - component: {fileID: 311937596}
   - component: {fileID: 311937595}
+  - component: {fileID: 311937598}
   m_Layer: 5
   m_Name: car_colour_option_four (1)
   m_TagString: Untagged
@@ -1166,6 +1182,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 311937593}
+--- !u!114 &311937598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 311937593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923795818cdf85f4584378df8208355b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourButton: {fileID: 311937595}
+  materialController: {fileID: 1396539638}
+  material: {fileID: 2100000, guid: 281a0964ec8472340a2ecf73499543d8, type: 2}
 --- !u!1 &338201677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,8 +1665,8 @@ MonoBehaviour:
   - {fileID: 1519398727}
   - {fileID: 669502150}
   carBody: {fileID: 1984972294}
-  carBodyTextureOffset: {x: 0.1, y: 0.1}
-  carDoorTextureOffset: {x: 0.1, y: 0.1}
+  carBodyTextureOffset: {x: 0.16, y: 0.16}
+  carDoorTextureOffset: {x: 0.16, y: 0.16}
 --- !u!1 &545071045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1679,7 @@ GameObject:
   - component: {fileID: 545071049}
   - component: {fileID: 545071048}
   - component: {fileID: 545071047}
+  - component: {fileID: 545071050}
   m_Layer: 5
   m_Name: car_colour_option_three (1)
   m_TagString: Untagged
@@ -1852,6 +1883,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 545071045}
+--- !u!114 &545071050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545071045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923795818cdf85f4584378df8208355b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourButton: {fileID: 545071047}
+  materialController: {fileID: 1396539638}
+  material: {fileID: 2100000, guid: 01b43e22b312a664eb356573a0994fec, type: 2}
 --- !u!1 &567118181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +2020,7 @@ GameObject:
   - component: {fileID: 596068765}
   - component: {fileID: 596068764}
   - component: {fileID: 596068763}
+  - component: {fileID: 596068766}
   m_Layer: 5
   m_Name: car_colour_option_three
   m_TagString: Untagged
@@ -2178,6 +2224,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 596068761}
+--- !u!114 &596068766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596068761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923795818cdf85f4584378df8208355b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourButton: {fileID: 596068763}
+  materialController: {fileID: 1396539638}
+  material: {fileID: 2100000, guid: 8183cf1d6e912574f95b1f0b9ae8466c, type: 2}
 --- !u!1 &640257615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,6 +2654,7 @@ GameObject:
   - component: {fileID: 707318640}
   - component: {fileID: 707318639}
   - component: {fileID: 707318638}
+  - component: {fileID: 707318641}
   m_Layer: 5
   m_Name: car_colour_option_four
   m_TagString: Untagged
@@ -2797,6 +2858,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 707318636}
+--- !u!114 &707318641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707318636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923795818cdf85f4584378df8208355b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourButton: {fileID: 707318638}
+  materialController: {fileID: 1396539638}
+  material: {fileID: 2100000, guid: cf66b1d6a331f9f4f8bbcbc04d5c5de1, type: 2}
 --- !u!1001 &711631612
 Prefab:
   m_ObjectHideFlags: 0
@@ -4493,7 +4568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yourButton: {fileID: 1152452414}
   materialController: {fileID: 1396539638}
-  material: {fileID: 2100000, guid: 09037cffe2bc87141a0994920f370ad0, type: 2}
+  material: {fileID: 2100000, guid: 6d24a9e2d2a4ae245a72607ea2ae7188, type: 2}
 --- !u!1 &1165434658
 GameObject:
   m_ObjectHideFlags: 0
