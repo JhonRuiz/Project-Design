@@ -36,7 +36,8 @@ public class ButtonListControl : MonoBehaviour {
             button.SetActive(true);
 
             //button.GetComponent<ButtonListButton>().setText("Button #" + i);
-            button.GetComponent<ButtonMgr>().setCar(cars.transform.GetChild(i).GetComponent<CarControl>().carObject);
+            Debug.Log(button);
+            button.GetComponent<ButtonMgr>().setCar(cars.transform.GetChild(0).GetComponent<CarControl>().carObject);
 
             button.transform.SetParent(buttonTemplate.transform.parent, false);
             Debug.Log("test2");
