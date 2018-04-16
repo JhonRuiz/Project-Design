@@ -15,8 +15,9 @@ public class ButtonListControl : MonoBehaviour {
     {
         int numChildren = cars.transform.childCount;
         Debug.Log(numChildren);
-        for (int i = 0; i < numChildren - 1; ++i)
+        for (int i = 0; i < numChildren; ++i)
         {
+            Debug.Log("working on child" + i);
             GameObject button = Instantiate(buttonTemplate) as GameObject;
             button.SetActive(true);
             //cars.transform.GetChild(i).GetComponent<CarControl>.carImage;
@@ -25,7 +26,7 @@ public class ButtonListControl : MonoBehaviour {
             button.GetComponent<ButtonMgr>().setCar(cars.transform.GetChild(i).GetComponent<CarControl>().carObject);
 
             button.transform.SetParent(buttonTemplate.transform.parent, false);
-            Debug.Log("test1");
+            
         }
 
 
@@ -47,11 +48,13 @@ public class ButtonListControl : MonoBehaviour {
     public void onClickAction(GameObject car)
     {
         Debug.Log("this worked");
-        for (int i = 0; i < cars.transform.childCount - 1; i++)
+        for (int i = 0; i < cars.transform.childCount; i++)
         {
             cars.transform.GetChild(i).gameObject.SetActive(false);
         }
         car.SetActive(true);
         canvas.GetComponent<menu>().ToggleCarSelector();
     }
+
+   
 }

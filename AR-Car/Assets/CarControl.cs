@@ -8,6 +8,10 @@ public class CarControl : MonoBehaviour {
     public string carName;
     public GameObject carObject;
     public Sprite carImage;
+    public GameObject[] carDoorsArray;
+    public GameObject carBody;
+    public Vector2 carBodyTextureOffset;
+    public Vector2 carDoorTextureOffset;
 
     //public SpriteRenderer sr;
 
@@ -29,5 +33,38 @@ public class CarControl : MonoBehaviour {
     public void enableCar()
     {
         carObject.SetActive(true);
+    }
+
+    public void setCarColour(Material mat)
+    {
+
+        Renderer carBodyRenderer = carBody.GetComponent<Renderer>();
+
+        Renderer[] carDoorRenderers = new Renderer[carDoorsArray.Length];
+
+        if (carDoorsArray.Length > 0)
+        {
+            for (int i = 0; i < carDoorsArray.Length; i++)
+            {
+
+                carDoorRenderers[i] = carDoorsArray[i].GetComponent<Renderer>();
+            }
+
+            for (int i = 0; i < carDoorRenderers.Length; i++)
+            {
+                carDoorRenderers[i].material = mat;
+                carDoorRenderers[i].material.mainTextureScale = carDoorTextureOffset;
+            }
+        }
+        
+
+
+        carBodyRenderer.material = mat;
+        carBodyRenderer.material.mainTextureScale = carBodyTextureOffset;
+
+        
+        
+
+
     }
 }

@@ -200,7 +200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &43315769
 Transform:
   m_ObjectHideFlags: 0
@@ -208,11 +208,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 43315768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -901.42346, y: -400.0357, z: 0.06291403}
+  m_LocalPosition: {x: 0.04650879, y: 0.33428955, z: 0.06291403}
   m_LocalScale: {x: 0.31295568, y: 0.24688248, z: 0.24499594}
   m_Children: []
-  m_Father: {fileID: 473270051}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &43315770
 ReflectionProbe:
@@ -611,6 +611,14 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 100044, guid: 714542e1b264e4846917d6ac0fd46dba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 714542e1b264e4846917d6ac0fd46dba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 714542e1b264e4846917d6ac0fd46dba, type: 3}
   m_IsPrefabParent: 0
@@ -652,6 +660,14 @@ MonoBehaviour:
   carName: 
   carObject: {fileID: 146863327}
   carImage: {fileID: 21300000, guid: c1d88272512ca0245a512e6c3e30b639, type: 3}
+  carDoorsArray:
+  - {fileID: 899953163}
+  - {fileID: 1074251360}
+  - {fileID: 1529799843}
+  - {fileID: 640257615}
+  carBody: {fileID: 817406632}
+  carBodyTextureOffset: {x: 20, y: 20}
+  carDoorTextureOffset: {x: 0.1, y: 0.1}
 --- !u!65 &146863335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -893,106 +909,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 283654620}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 408958292}
-        m_MethodName: RedColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1808641564}
-        m_MethodName: RedColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 899953165}
-        m_MethodName: RedColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1529799845}
-        m_MethodName: RedColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1074251362}
-        m_MethodName: RedColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 640257617}
-        m_MethodName: RedColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1519398729}
-        m_MethodName: RedColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 669502152}
-        m_MethodName: RedColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1984972295}
-        m_MethodName: RedColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &283654620
@@ -1406,9 +1323,8 @@ Transform:
   - {fileID: 146863325}
   - {fileID: 1165434659}
   - {fileID: 1680992842}
-  - {fileID: 43315769}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &473270052
 MonoBehaviour:
@@ -1715,6 +1631,12 @@ MonoBehaviour:
   carName: GT86
   carObject: {fileID: 520797479}
   carImage: {fileID: 21300000, guid: 199a5c0ccfa614c46a60bd1b07ef5cab, type: 3}
+  carDoorsArray:
+  - {fileID: 1519398727}
+  - {fileID: 669502150}
+  carBody: {fileID: 1984972294}
+  carBodyTextureOffset: {x: 0.1, y: 0.1}
+  carDoorTextureOffset: {x: 0.1, y: 0.1}
 --- !u!1 &545071045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,6 +2896,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -0.0215
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: bad4d78a0e4a57942a24495cf920111a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bad4d78a0e4a57942a24495cf920111a, type: 3}
   m_IsPrefabParent: 0
@@ -3163,6 +3089,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 795962984}
+--- !u!1 &817406632 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100044, guid: 714542e1b264e4846917d6ac0fd46dba, type: 3}
+  m_PrefabInternal: {fileID: 146863324}
 --- !u!1 &860832145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,7 +3124,7 @@ Transform:
   - {fileID: 492790266}
   - {fileID: 181141865}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &879853376
 GameObject:
@@ -4445,6 +4375,7 @@ GameObject:
   - component: {fileID: 1152452416}
   - component: {fileID: 1152452415}
   - component: {fileID: 1152452414}
+  - component: {fileID: 1152452417}
   m_Layer: 5
   m_Name: car_colour_option_one
   m_TagString: Untagged
@@ -4511,106 +4442,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1152452415}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1984972295}
-        m_MethodName: BlueColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1808641564}
-        m_MethodName: BlueColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 1
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 408958292}
-        m_MethodName: BlueColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1519398729}
-        m_MethodName: BlueColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 669502152}
-        m_MethodName: BlueColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 899953165}
-        m_MethodName: BlueColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1529799845}
-        m_MethodName: BlueColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1074251362}
-        m_MethodName: BlueColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 640257617}
-        m_MethodName: BlueColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1152452415
@@ -4648,6 +4480,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1152452412}
+--- !u!114 &1152452417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152452412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923795818cdf85f4584378df8208355b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourButton: {fileID: 1152452414}
+  materialController: {fileID: 1396539638}
+  material: {fileID: 2100000, guid: 09037cffe2bc87141a0994920f370ad0, type: 2}
 --- !u!1 &1165434658
 GameObject:
   m_ObjectHideFlags: 0
@@ -4748,6 +4594,10 @@ MonoBehaviour:
   carName: Cube
   carObject: {fileID: 1165434658}
   carImage: {fileID: 21300000, guid: 190401e772dc60a40a329ad101a0d643, type: 3}
+  carDoorsArray: []
+  carBody: {fileID: 408958291}
+  carBodyTextureOffset: {x: 1, y: 1}
+  carDoorTextureOffset: {x: 0, y: 0}
 --- !u!1 &1227590058
 GameObject:
   m_ObjectHideFlags: 0
@@ -5066,6 +4916,7 @@ GameObject:
   - component: {fileID: 1396539637}
   - component: {fileID: 1396539636}
   - component: {fileID: 1396539635}
+  - component: {fileID: 1396539638}
   m_Layer: 5
   m_Name: ButtonScrollList
   m_TagString: Untagged
@@ -5156,6 +5007,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1396539633}
+--- !u!114 &1396539638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396539633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b53e0a6fbf85224d9c31c426a941f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars: {fileID: 473270050}
 --- !u!1 &1439856730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5953,7 +5816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1808641564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6596,7 +6459,7 @@ Transform:
   - {fileID: 338201678}
   - {fileID: 1709699217}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091661437
 GameObject:
