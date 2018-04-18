@@ -12,6 +12,7 @@ public class MaterialButtonMgr : MonoBehaviour {
     {
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        
     }
 
     void TaskOnClick()
