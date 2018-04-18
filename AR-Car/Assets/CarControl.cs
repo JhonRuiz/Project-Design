@@ -12,6 +12,7 @@ public class CarControl : MonoBehaviour {
     public GameObject carBody;
     public Vector2 carBodyTextureOffset;
     public Vector2 carDoorTextureOffset;
+    
 
     //public SpriteRenderer sr;
 
@@ -24,6 +25,9 @@ public class CarControl : MonoBehaviour {
 	void Update () {
 		
 	}
+   
+
+
 
     public Sprite returnSprite()
     {

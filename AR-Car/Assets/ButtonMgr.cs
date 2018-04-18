@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/////////////////////////////////////////////////////////
+// This class is the manager of each button created for selection and changing of cars.
+// It manages onClick events and passes it to the ButtonListControl.cs to handle all tasks.
+// Buttons should not have any logic to do events themselves, but instead pass them to a central object to handle.
+////////////////////////////////////////////////////////
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

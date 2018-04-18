@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class LoadAR : MonoBehaviour {
 
-    public GameObject a6;
-    public GameObject cube;
-    public GameObject gt86;
-    public GameObject gt86Body;
+    public GameObject cars;
     public Material[] BodyColourMat;
     Material CurrMat;
     Renderer renderer;
@@ -16,28 +13,26 @@ public class LoadAR : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        
-
-        a6.SetActive(false);
-        cube.SetActive(false);
-        gt86.SetActive(false);
-
-        Debug.Log(Globals.curentCar);
-
-        if (Globals.curentCar == 1)
+        for (int i = 0; i < cars.transform.childCount; i++)
         {
-            a6.SetActive(true);
-        }
-        if (Globals.curentCar == 2)
-        {
-            cube.SetActive(true);
-        }
-        if (Globals.curentCar == 3)
-        {
-            gt86.SetActive(true);
+            //Disable each car
+            Debug.Log(Globals.curentCar);
+
+            if (i != Globals.curentCar)
+            {
+                cars.transform.GetChild(i).gameObject.SetActive(false);
+                
+            }
+            else
+            {
+                cars.transform.GetChild(i).gameObject.SetActive(true);
+                cars.transform.GetChild(i).GetComponent<CarControl>().setCarColour(Globals.currentMaterial);
+            }
+            
+            
         }
 
-        
+          
             
         
 

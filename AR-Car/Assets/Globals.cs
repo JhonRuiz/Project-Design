@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Globals : MonoBehaviour {
 
-    public static int currentColour = -1;
-    public static int curentCar = -1;
+    public static Material currentMaterial;
+    public static int curentCar;
 
     // Use this for initialization
     void Start () {
