@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641222, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.57481784, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1704,7 +1704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &520797480
 Animator:
   serializedVersion: 3
@@ -4204,11 +4204,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400018, guid: 87715bfd6b24baf4e8a4fa33fcca057f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -901.41
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 87715bfd6b24baf4e8a4fa33fcca057f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -400.186
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 87715bfd6b24baf4e8a4fa33fcca057f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4233,6 +4233,10 @@ Prefab:
     - target: {fileID: 400018, guid: 87715bfd6b24baf4e8a4fa33fcca057f, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: 87715bfd6b24baf4e8a4fa33fcca057f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87715bfd6b24baf4e8a4fa33fcca057f, type: 3}
