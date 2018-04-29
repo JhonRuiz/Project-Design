@@ -41,7 +41,7 @@ public class CarControl : MonoBehaviour {
 
     public void setCarColour(Material mat)
     {
-
+        Debug.Log(carName);
         Renderer carBodyRenderer = carBody.GetComponent<Renderer>();
 
         Renderer[] carDoorRenderers = new Renderer[carDoorsArray.Length];
@@ -56,6 +56,7 @@ public class CarControl : MonoBehaviour {
 
             for (int i = 0; i < carDoorRenderers.Length; i++)
             {
+                
                 carDoorRenderers[i].material = mat;
                 carDoorRenderers[i].material.mainTextureScale = carDoorTextureOffset;
             }
