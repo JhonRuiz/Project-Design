@@ -4,12 +4,17 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using SimpleJSON;
+using UnityEngine.SceneManagement;
 
 public class LoginHandler : MonoBehaviour {
     [SerializeField]
     private string API_Address = "https://arcarnodewebserver.azurewebsites.net/users/authenticate";
     public InputField username;
     public InputField password;
+    public GameObject message;
+    private string json;
+
 
 
 	// Use this for initialization
@@ -25,9 +30,11 @@ public class LoginHandler : MonoBehaviour {
     public void Test()
     {
         
-        string json = "{'username' : 'Micah2', 'password' : '123456'";
+        
 
         StartCoroutine(Post(API_Address));
+        
+
     }
 
     IEnumerator Post(string url)
@@ -45,7 +52,24 @@ public class LoginHandler : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Received: " + uwr.downloadHandler.text);
+            if (JSON.Parse(uwr.downloadHandler.text)["success"])
+            {
+                Debug.Log("success");
+                Debug.Log("Received: " + uwr.downloadHandler.text);
+                json = uwr.downloadHandler.text;
+                Globals.authKey = JSON.Parse(json)["token"];
+                Debug.Log(Globals.authKey);
+                SceneManager.LoadScene("3D_SCENE", LoadSceneMode.Single);
+            }
+            else
+            {
+                Debug.Log("No success");
+                message.GetComponent<Text>().text = JSON.Parse(uwr.downloadHandler.text)["msg"];
+                message.GetComponent<Text>().color = Color.red;
+                message.SetActive(true);
+            }
+            
         }
+        
     }
 }

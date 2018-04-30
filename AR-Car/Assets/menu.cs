@@ -34,7 +34,7 @@ public class menu : MonoBehaviour {
 
     public void ChangeScene()
     {
-        if (scene.name == "3D_SCENE TEST")
+        if (scene.name == "3D_SCENE")
         {
             Debug.Log("Changing Scene");
             SceneManager.LoadScene("AR_SCENE");
@@ -42,7 +42,7 @@ public class menu : MonoBehaviour {
         else
         {
             Debug.Log("Changing Scene");
-            SceneManager.LoadScene("3D_SCENE TEST");
+            SceneManager.LoadScene("3D_SCENE");
         }
         
     }
