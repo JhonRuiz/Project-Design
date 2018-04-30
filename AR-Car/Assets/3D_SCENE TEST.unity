@@ -4024,8 +4024,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4081,11 +4080,7 @@ MonoBehaviour:
   carName: Cube
   carObject: {fileID: 1165434658}
   carImage: {fileID: 21300000, guid: 190401e772dc60a40a329ad101a0d643, type: 3}
-  carDoorsArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  carDoorsArray: []
   carBody: {fileID: 408958291}
   carBodyTextureOffset: {x: 1, y: 1}
   carDoorTextureOffset: {x: 0, y: 0}
