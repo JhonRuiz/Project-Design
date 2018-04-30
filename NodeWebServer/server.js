@@ -34,6 +34,8 @@ const port = process.env.PORT || 8080;
 
 
 // Body Parser Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(bodyParser.json());
 
 // Passport Middleware
@@ -47,7 +49,7 @@ require('./config/passport')(passport);
 app.use(cors());
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(__dirname + '/public'));
 
 
 
