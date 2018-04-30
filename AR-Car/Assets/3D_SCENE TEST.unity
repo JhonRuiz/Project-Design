@@ -4182,8 +4182,8 @@ MonoBehaviour:
   - {fileID: 1180495249}
   - {fileID: 454190109}
   carBody: {fileID: 1850707493}
-  carBodyTextureOffset: {x: 0, y: 0}
-  carDoorTextureOffset: {x: 0, y: 0}
+  carBodyTextureOffset: {x: 0.16, y: 0.16}
+  carDoorTextureOffset: {x: 0.16, y: 0.16}
 --- !u!65 &1166891986
 BoxCollider:
   m_ObjectHideFlags: 0
