@@ -17,13 +17,15 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from "./services/auth.service";
 import { AuthGuard} from "./guards/auth.guard";
+import { AssetsComponent } from './assets/assets.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
-  {path:'register', component: RegisterComponent},
+  {path:'register', component: RegisterComponent, canActivate:[AuthGuard]},
   {path:'login', component: LoginComponent},
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]}
+  {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
+  {path:'assets', component: AssetsComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    AssetsComponent
   ],
   imports: [
     BrowserModule,

@@ -15,11 +15,25 @@ export class RegisterComponent implements OnInit {
   username: String;
   email: String;
   password: String;
+  user:Array<Object> = [];
 
 
   constructor(private validateService: ValidateService, private flashMessagesService: FlashMessagesService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.authService.getAllUsers().subscribe(profiles => {
+      //this.user = profile.user;
+      var count = 0;
+      profiles.forEach(element => {
+        this.user[count] = element;
+        console.log(this.user[count]);
+        count++;
+      });
+    }, 
+    function(err) {
+      console.log(err);
+      return false;
+    });
   }
 
   onRegisterSubmit(){
@@ -48,14 +62,31 @@ export class RegisterComponent implements OnInit {
       console.log(data);
       if(data.success){
         console.log("success");
-        message.show('You are now registered and can log in', {cssClass:'alert-success', timeout: 3000});
-        naviagtion.navigate(['/login']);
+        message.show('User was registered successfully and can now log in', {cssClass:'alert-success', timeout: 3000});
+        naviagtion.navigate(['/register']);
+        window.location.reload();
       } else {
         message.show('Something went wrong', {cssClass:'alert-danger', timeout: 3000});
         naviagtion.navigate(['/register']);
+        
       }
     })
 
+  }
+
+  deleteAccount(user) {
+    let naviagtion = this.router;
+    console.log(user);
+    this.authService.deleteUser({ id: user}).subscribe(function(data) {
+      if(data.success){
+        console.log("success");
+        
+        window.location.reload();
+      }
+      else {
+        console.log("not succesful");
+      }
+    })
   }
 
 }

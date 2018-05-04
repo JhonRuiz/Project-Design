@@ -29,7 +29,7 @@ router.post('/register', function(req, res, next) {
 router.post('/authenticate', function(req, res, next) {
     const username = req.body.username;
     const password = req.body.password;
-    //console.log(req.body.username);
+    console.log(req.body.username);
 
     User.getUserByUsername(username, function(err, user){
         if (err) throw err;
@@ -65,6 +65,36 @@ router.post('/authenticate', function(req, res, next) {
 // Profile
 router.get('/profile', passport.authenticate('jwt', {session:false}), function(req, res, next) {
     res.json({user: req.user})
+
+});
+
+router.get('/getAllUsers', function(req, res, next) {
+    User.getAllUsers(function(err,users) {
+        var array = [];
+        users.forEach(function(element) {
+            array.push({
+                id: element._id,
+                name: element.name,
+                username: element.username,
+                email: element.email
+            })
+        })
+        res.json(array);
+    })
+
+});
+
+router.post('/deleteUser', function(req, res, next) {
+    //console.log(req.body.id);
+    User.deleteUser(req.body.id, function(err) {
+        console.log(err);
+        if (!err) {
+            res.json({success: true, msg: "deleted user"})
+        }
+        else {
+            res.json({success: false, msg: "not successful"})
+        }
+    })
 
 });
 

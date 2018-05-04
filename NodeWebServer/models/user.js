@@ -27,6 +27,11 @@ module.exports.getUserById = function(id, callback) {
     User.findById(id, callback);
 }
 
+module.exports.getAllUsers = function(callback) {
+    console.log("called");
+    User.find({}, callback);
+}
+
 module.exports.getUserByUsername = function(username, callback) {
     const query = {username: username};
 
@@ -41,6 +46,11 @@ module.exports.addUser = function(newUser, callback) {
             newUser.save(callback);
         })
     });
+}
+
+module.exports.deleteUser = function(id, callback) {
+    //console.log("ID passed " + id);
+    User.find({ _id: id}).remove(callback);
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback) {

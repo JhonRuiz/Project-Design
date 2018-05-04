@@ -27,7 +27,7 @@ mongoose.connection.on('error', function(err){
 
 const app = express();
 
-const users = require('./routes/users');
+const API = require('./routes/API');
 
 // Port Number
 const port = process.env.PORT || 8080;
@@ -53,7 +53,7 @@ app.use('/', express.static(__dirname + '/public'));
 
 
 
-app.use('/users', users);
+app.use('/API', API);
 
 // Index Route
 app.get('/', function(req,res) {
