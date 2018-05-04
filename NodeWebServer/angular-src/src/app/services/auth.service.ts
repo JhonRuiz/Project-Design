@@ -59,6 +59,42 @@ export class AuthService {
     return this.http.post('http://localhost:8080/API/deleteUser', id, {headers: headers})
     .map(res => res.json());
   }
+
+  disableAccount(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:8080/API/disableAccount', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  enableAccount(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:8080/API/enableAccount', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  disableAdmin(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:8080/API/disableAdmin', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  enableAdmin(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:8080/API/enableAdmin', id, {headers: headers})
+    .map(res => res.json());
+  }
   
   loadToken() {
     const token = localStorage.getItem('id_token');

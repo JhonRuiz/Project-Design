@@ -18,6 +18,14 @@ const UserSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    isAdmin: {
+        type: Boolean,
+        required: true
+    },
+    isActive: {
+        type: Boolean,
+        required: true
     }
 });
 
@@ -43,6 +51,8 @@ module.exports.addUser = function(newUser, callback) {
         bcrypt.hash(newUser.password, salt, function(err, hash) {
             if(err) throw err;
             newUser.password = hash;
+            newUser.isAdmin = false;
+            newUser.isActive = true;
             newUser.save(callback);
         })
     });
@@ -58,4 +68,21 @@ module.exports.comparePassword = function(candidatePassword, hash, callback) {
         if(err) throw err;
         callback(null, isMatch);
     })
+}
+
+module.exports.disableAccount = function(id, callback) {
+    User.find({ _id: id}).update({isActive: false}, callback);
+}
+
+module.exports.enableAccount = function(id, callback) {
+    User.find({ _id: id}).update({isActive: true}, callback);
+}
+
+module.exports.enableAdmin = function(id, callback) {
+    User.find({ _id: id}).update({isAdmin: true}, callback);
+    
+}
+
+module.exports.disableAdmin = function(id, callback) {
+    User.find({ _id: id}).update({isAdmin: false}, callback);
 }

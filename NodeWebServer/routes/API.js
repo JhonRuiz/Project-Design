@@ -39,24 +39,30 @@ router.post('/authenticate', function(req, res, next) {
 
         User.comparePassword(password, user.password, function(err, isMatch){
             if(err) throw err;
-            if(isMatch) {
-                const token = jwt.sign({data: user}, config.secret, {
-                    expiresIn: 604800 // 1 week
-             });
-
-                res.json({
-                    success: true,
-                    token: 'JWT ' +token,
-                    user: {
-                        id: user._id,
-                        name: user.name,
-                        username: user.username,
-                        email: user.email
-                    }
-                })
-            } else {
-                return res.json({success: false, msg: "Wrong password."})
+            if (user.isActive) {
+                if(isMatch) {
+                    const token = jwt.sign({data: user}, config.secret, {
+                        expiresIn: 604800 // 1 week
+                 });
+    
+                    res.json({
+                        success: true,
+                        token: 'JWT ' +token,
+                        user: {
+                            id: user._id,
+                            name: user.name,
+                            username: user.username,
+                            email: user.email
+                        }
+                    })
+                } else {
+                    return res.json({success: false, msg: "Wrong password."})
+                }
             }
+            else {
+                return res.json({success: false, msg: "Unauthorized."})
+            }
+            
         });
     })
 
@@ -64,37 +70,132 @@ router.post('/authenticate', function(req, res, next) {
 
 // Profile
 router.get('/profile', passport.authenticate('jwt', {session:false}), function(req, res, next) {
-    res.json({user: req.user})
+    if (req.user.isActive) {
+        res.json({user: req.user})
+    }
+    else {
+        res.json({success: false, msg: "Unauthorized"});
+    }
+    
 
 });
 
-router.get('/getAllUsers', function(req, res, next) {
-    User.getAllUsers(function(err,users) {
-        var array = [];
-        users.forEach(function(element) {
-            array.push({
-                id: element._id,
-                name: element.name,
-                username: element.username,
-                email: element.email
+router.get('/getAllUsers', passport.authenticate('jwt', {session:false}), function(req, res, next) {
+    if (req.user.isActive && req.user.isAdmin) {
+        User.getAllUsers(function(err,users) {
+            var array = [];
+            users.forEach(function(element) {
+                array.push({
+                    id: element._id,
+                    name: element.name,
+                    username: element.username,
+                    email: element.email,
+                    isActive: element.isActive,
+                    isAdmin: element.isAdmin
+                })
             })
+            res.json(array);
         })
-        res.json(array);
-    })
+    } else {
+        res.json({success: false, msg: "Unauthorized"});
+    }
+
+    
 
 });
 
-router.post('/deleteUser', function(req, res, next) {
-    //console.log(req.body.id);
-    User.deleteUser(req.body.id, function(err) {
+router.post('/deleteUser', passport.authenticate('jwt', {session:false}),function(req, res, next) {
+    //console.log(req.user);
+    if (req.user.isActive && req.user.isAdmin) {
+        User.deleteUser(req.body.id, function(err) {
+            console.log(err);
+            if (!err) {
+                res.json({success: true, msg: "deleted user"})
+            }
+            else {
+                res.json({success: false, msg: "not successful"})
+            }
+        })
+    } else {
+        res.json({success: false, msg: "Unauthorized"});
+    }
+    
+
+});
+
+router.post('/disableAccount', passport.authenticate('jwt', {session:false}),function(req, res, next) {
+    if (req.user.isActive && req.user.isAdmin) {
+        //console.log(req.user);
+        User.disableAccount(req.body.id, function(err) {
+            console.log(err);
+            if (!err) {
+                res.json({success: true, msg: "disabled user"})
+         }
+          else {
+              res.json({success: false, msg: "not successful"})
+         }
+        })
+
+    } else {
+        res.json({success: false, msg: "Unauthorized"});
+    }
+    
+});
+
+router.post('/enableAccount', passport.authenticate('jwt', {session:false}),function(req, res, next) {
+    if (req.user.isActive && req.user.isAdmin) {
+        //console.log(req.user);
+    User.enableAccount(req.body.id, function(err) {
         console.log(err);
         if (!err) {
-            res.json({success: true, msg: "deleted user"})
+            res.json({success: true, msg: "enabled user"})
         }
         else {
             res.json({success: false, msg: "not successful"})
         }
     })
+    } else {
+        res.json({success: false, msg: "Unauthorized"});
+    }
+    
+
+});
+
+router.post('/enableAdmin', passport.authenticate('jwt', {session:false}),function(req, res, next) {
+    if (req.user.isActive && req.user.isAdmin) {
+        User.enableAdmin(req.body.id, function(err) {
+            console.log(err);
+            if (!err) {
+                res.json({success: true, msg: "enabled admin"})
+            }
+            else {
+                res.json({success: false, msg: "not successful"})
+            }
+        })
+    } else {
+        res.json({success: false, msg: "Unauthorized"});
+    }
+    //console.log(req.user);
+    
+
+});
+
+router.post('/disableAdmin', passport.authenticate('jwt', {session:false}),function(req, res, next) {
+    if (req.user.isActive && req.user.isAdmin) {
+        User.disableAdmin(req.body.id, function(err) {
+            console.log(err);
+            if (!err) {
+                res.json({success: true, msg: "disabled admin"})
+            }
+            else {
+                res.json({success: false, msg: "not successful"})
+            }
+        })
+    } else {
+        res.json({success: false, msg: "Unauthorized"});
+    }
+    //console.log(req.user);
+    
 
 });
 

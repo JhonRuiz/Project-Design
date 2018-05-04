@@ -89,4 +89,60 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  disableAccount(userID) {
+    console.log(userID);
+    this.authService.disableAccount({ id: userID}).subscribe(function(data) {
+      if(data.success){
+        console.log("success");
+        
+        window.location.reload();
+      }
+      else {
+        console.log("not succesful");
+      }
+    })
+  }
+
+  enableAccount(userID) {
+    console.log(userID);
+    this.authService.enableAccount({ id: userID}).subscribe(function(data) {
+      if(data.success){
+        console.log("success");
+        
+        window.location.reload();
+      }
+      else {
+        console.log("not succesful");
+      }
+    })
+  }
+
+  disableAdmin(userID) {
+    console.log(userID);
+    this.authService.disableAdmin({ id: userID}).subscribe(function(data) {
+      if(data.success){
+        console.log("success");
+        
+        window.location.reload();
+      }
+      else {
+        console.log("not succesful");
+      }
+    })
+  }
+
+  enableAdmin(userID) {
+    console.log(userID);
+    this.authService.enableAdmin({ id: userID}).subscribe(function(data) {
+      if(data.success){
+        console.log("success");
+        
+        window.location.reload();
+      }
+      else {
+        console.log("not succesful");
+      }
+    })
+  }
+
 }
