@@ -17,7 +17,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from "./services/auth.service";
 import { AuthGuard} from "./guards/auth.guard";
-import { AssetsComponent } from './assets/assets.component';
+import { AssetmanagerComponent } from './components/assetmanager/assetmanager.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -25,7 +26,7 @@ const appRoutes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
-  {path:'assets', component: AssetsComponent, canActivate:[AuthGuard]}
+  {path:'assetmanager', component: AssetmanagerComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({
@@ -37,14 +38,15 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    AssetsComponent
+    AssetmanagerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [ValidateService, AuthService, FlashMessagesService, AuthGuard],
   bootstrap: [AppComponent]

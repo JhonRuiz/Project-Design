@@ -6,6 +6,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const qs = require('qs');
+const upload = require('multer');
 
 // Connect to Database
 mongoose.connect('mongodb://test-id-azure.documents.azure.com:10255/arcar?ssl=true', {

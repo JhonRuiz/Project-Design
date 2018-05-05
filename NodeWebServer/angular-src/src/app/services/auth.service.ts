@@ -51,12 +51,30 @@ export class AuthService {
     .map(res => res.json());
   }
 
+  getAllAssetBundles() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:8080/API/getAllAssetBundles', {headers: headers})
+    .map(res => res.json());
+  }
+
   deleteUser(id) {
     let headers = new Headers();
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:8080/API/deleteUser', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  removeBundle(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:8080/API/removeBundle', id, {headers: headers})
     .map(res => res.json());
   }
 
@@ -93,6 +111,15 @@ export class AuthService {
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:8080/API/enableAdmin', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  uploadBundle(formData) {
+    //console.log(formData);
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    return this.http.post('http://localhost:8080/API/uploadAsset', formData, {headers: headers})
     .map(res => res.json());
   }
   
