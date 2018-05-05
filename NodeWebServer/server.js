@@ -1,70 +1,76 @@
+//Express web server
 const express = require('express');
+//Use app as Express server object
+const app = express();
+//Path
 const path = require('path');
+//BodyParser for REST API
 const bodyParser = require('body-parser');
+//Cross Origin Resource Sharing
 const cors = require('cors');
+//Passport for account authentication
 const passport = require('passport');
+//Mongoose to connect to Mongo/Cosmo DB
 const mongoose = require('mongoose');
+//Database config file
 const config = require('./config/database');
-const qs = require('qs');
-const upload = require('multer');
+// Routes to use for API
+const API = require('./routes/API');
+// Port Number for server
+const port = process.env.PORT || 8080;
+
+
 
 // Connect to Database
-mongoose.connect('mongodb://test-id-azure.documents.azure.com:10255/arcar?ssl=true', {
+mongoose.connect('mongodb://' + config.host + ':' + config.port + '/'+config.database+'?' + config.options + '', {
     auth: {
-      user: 'test-id-azure',
-      password: 'jBjv01h0WR3OCJsRorcW7kO4HeewDeDLIndm1DvPm9hjU7sNH4P73cUiTLl85Z108e1QKHuSenTdL4oQXjnqyA=='
+      user: config.username,
+      password: config.password
     }
-  });
+});
 
 // On Connection
 mongoose.connection.on('connected', function(){
+    //Display message
     console.log("Connected to database " + config.database);
 })
 
 // On Error
 mongoose.connection.on('error', function(err){
+    //Display error
     console.log("Database error " + err);
 })
 
-const app = express();
-
-const API = require('./routes/API');
-
-// Port Number
-const port = process.env.PORT || 8080;
-
-
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(bodyParser.json());
 
 // Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
 require('./config/passport')(passport);
 
 
 //CORS Middleware
 app.use(cors());
 
-// Set Static Folder
+
+// Set public folder for WWW access
 app.use('/', express.static(__dirname + '/public'));
 
-
-
+//Set API routes
 app.use('/API', API);
 
 // Index Route
 app.get('/', function(req,res) {
     res.send('Invalid Endpoint');
-
 });
 
+//Wildcard route - send to Index
 app.get('*', (req,res) => {
     res.sendFile(path.join(__dirname, "public/index.html"));
 })
+
 
 // Start Server
 app.listen(port,function() {
