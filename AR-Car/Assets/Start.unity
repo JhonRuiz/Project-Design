@@ -1174,7 +1174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b97bed020abfafe40a3a238f70e164e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  API_Address: http://localhost:8080/API/authenticate
   username: {fileID: 311995662}
   password: {fileID: 1853920388}
   message: {fileID: 37150989}

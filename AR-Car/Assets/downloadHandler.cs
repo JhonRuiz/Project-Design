@@ -8,6 +8,9 @@ using UnityEngine.UI;
 public class downloadHandler : MonoBehaviour {
     [SerializeField]
     private GameObject buttonTemplate;
+    public GameObject cars;
+
+    public ButtonListControl btnListCtrl;
     
     private void Start() {
         GetCloudBundles();
@@ -45,8 +48,9 @@ public class downloadHandler : MonoBehaviour {
                 button.SetActive(true);
                 //Set the sprite of the button to be a pre-defined image of the car (handled by CarControl.cs attached to each car)
                 button.GetComponentInChildren<Text>().text = JSON.Parse(json)["bundles"][i]["title"];
-                //Set the car game object this image corresponds to.
-                //button.GetComponent<ButtonMgr>().setCar(cars.transform.GetChild(i).GetComponent<CarControl>().carObject);
+                button.GetComponent<DownloadButtonMgr>().fileName = JSON.Parse(json)["bundles"][i]["fileLocation"];
+                button.GetComponent<DownloadButtonMgr>().prefabName = JSON.Parse(json)["bundles"][i]["prefab"];
+
                 //Set the parent of the button to the same parent as the button template.
                 button.transform.SetParent(buttonTemplate.transform.parent, false);
             }
@@ -56,10 +60,11 @@ public class downloadHandler : MonoBehaviour {
 
 
     }
+    
 
-    private void StartDownload()
+    public void StartDownload(string _FileName, string Prefab)
     {
-        string url = "http://localhost:8080/api/AssetBundleDownload?fileName=audia6";
+        string url = Globals.API + "AssetBundleDownload?fileName=" + _FileName;
 
         var form = new WWWForm();
         Dictionary<string, string> headers = new Dictionary<string,string>();
@@ -67,12 +72,12 @@ public class downloadHandler : MonoBehaviour {
         
         WWW www = new WWW(url, null, headers);
 
-        StartCoroutine(WaitForReq(www));
+        StartCoroutine(WaitForReq(www, Prefab));
     
     }
 
 
-    IEnumerator WaitForReq(WWW www)
+    IEnumerator WaitForReq(WWW www, string prefab)
     {
         StartCoroutine(ShowProgress(www));
         yield return www;
@@ -81,13 +86,21 @@ public class downloadHandler : MonoBehaviour {
         
         if (www.error == null)
         {
-            GameObject audi = bundle.LoadAsset("Audi A6 AR Test Prefab") as GameObject;
-            Instantiate(audi);
+            Debug.Log("PREFAB IS " + prefab);
+            GameObject newCarFromDownload = bundle.LoadAsset<GameObject>(prefab);
+            
+            GameObject obj = Instantiate(newCarFromDownload);
+            obj.transform.parent = cars.transform;
+            obj.transform.localPosition = new Vector3(-901.403f,-400.192f,-0.0085f);
+            Debug.Log("Added new car");
+            btnListCtrl.createMenuItem(obj.GetComponent<CarControl>());
+            btnListCtrl.onClickAction(obj);
         }
         else
         {
             Debug.Log(www.error);
         }
+        
     }
 
 

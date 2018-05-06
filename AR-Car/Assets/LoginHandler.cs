@@ -8,8 +8,8 @@ using SimpleJSON;
 using UnityEngine.SceneManagement;
 
 public class LoginHandler : MonoBehaviour {
-    [SerializeField]
-    private string API_Address = Globals.API+"authenticate";
+    //[SerializeField]
+    //private string API_Address = Globals.API+"authenticate";
     public InputField username;
     public InputField password;
     public GameObject message;
@@ -32,18 +32,18 @@ public class LoginHandler : MonoBehaviour {
         
         
 
-        StartCoroutine(Post(API_Address));
+        StartCoroutine(Post());
         
 
     }
 
-    IEnumerator Post(string url)
+    IEnumerator Post()
     {
         WWWForm form = new WWWForm();
         form.AddField("username", username.text);
         form.AddField("password", password.text);
 
-        UnityWebRequest uwr = UnityWebRequest.Post(API_Address, form);
+        UnityWebRequest uwr = UnityWebRequest.Post(Globals.API + "/authenticate", form);
         yield return uwr.SendWebRequest();
 
         if (uwr.isNetworkError)
