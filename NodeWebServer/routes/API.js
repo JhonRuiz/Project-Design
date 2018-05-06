@@ -36,7 +36,7 @@ const uploadFolder = './uploads/'
 // This API allows an administrator to create a new user.
 router.post('/register', passport.authenticate('jwt', {session:false}), function(req, res, next) {
     //Check to see the requester is an administrator and their account is active.
-    if (user.isActive && user.isAdmin) {
+    if (req.user.isActive && req.user.isAdmin) {
         //Create a new User object to pass to the User model
         let newUser = new User({
             name: req.body.name,

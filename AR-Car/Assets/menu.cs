@@ -10,6 +10,7 @@ public class menu : MonoBehaviour {
     Scene scene;
     public GameObject car_selector_interface;
     public GameObject colour_selector_interface;
+    public GameObject download_selector_interface;
     // Use this for initialization
     void Start () {
 
@@ -57,6 +58,22 @@ public class menu : MonoBehaviour {
         else
         {
             car_selector_interface.gameObject.SetActive(true);
+            Debug.Log("Displaying interface");
+        }
+
+
+    }
+
+    public void ToggleDownloadSelector()
+    {
+        if (download_selector_interface.gameObject.activeSelf == true)
+        {
+            download_selector_interface.gameObject.SetActive(false);
+            Debug.Log("Removing interface");
+        }
+        else
+        {
+            download_selector_interface.gameObject.SetActive(true);
             Debug.Log("Displaying interface");
         }
 

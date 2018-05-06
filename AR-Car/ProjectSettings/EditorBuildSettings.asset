@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/3D_SCENE TEST.unity
-    guid: 13eac67cdad1cab4088772168d3f0f83
+    path: Assets/Start.unity
+    guid: 2f2bfc1d8eb7ea146b229005fea56ed0
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/AR_SCENE.unity
     guid: ac70c052e08b5124286d27da78f5d8a1
   - enabled: 0
     path: Assets/3D_SCENE.unity
     guid: 73133bbe00729bd458ad6b9f4e441d8d
+  - enabled: 1
+    path: Assets/3D_SCENE TEST.unity
+    guid: 5a4795cdea989ca4f8fd3fc0710c10b5

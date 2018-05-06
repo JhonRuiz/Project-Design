@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class LoginHandler : MonoBehaviour {
     [SerializeField]
-    private string API_Address = "https://arcarnodewebserver.azurewebsites.net/users/authenticate";
+    private string API_Address = Globals.API+"authenticate";
     public InputField username;
     public InputField password;
     public GameObject message;
