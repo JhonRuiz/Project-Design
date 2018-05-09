@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n  <flash-messages></flash-messages>\n  <router-outlet></router-outlet>\n\n</div>"
+module.exports = "<app-navbar></app-navbar>\r\n<div class=\"container\">\r\n  <flash-messages></flash-messages>\r\n  <router-outlet></router-outlet>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -84,6 +84,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__ = __webpack_require__("./src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_assetmanager_assetmanager_component__ = __webpack_require__("./src/app/components/assetmanager/assetmanager.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -107,12 +108,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'assetmanager', component: __WEBPACK_IMPORTED_MODULE_16__components_assetmanager_assetmanager_component__["a" /* AssetmanagerComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -126,20 +130,155 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */]
+                __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__components_assetmanager_assetmanager_component__["a" /* AssetmanagerComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
-                __WEBPACK_IMPORTED_MODULE_13_angular2_flash_messages__["FlashMessagesModule"].forRoot()
+                __WEBPACK_IMPORTED_MODULE_13_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_12__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_13_angular2_flash_messages__["FlashMessagesService"], __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/assetmanager/assetmanager.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/assetmanager/assetmanager.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2 class=\"page-header\">Upload new AssetBundle</h2>\n<form [formGroup]=\"form\" (submit)=\"onSubmit()\">\n  <div class=\"form-group\">\n    <label>Bundle Title</label>\n    <input type=\"text\" placeholder=\"\" formControlName=\"title\" id=\"title\" class=\"form-control\" >\n  </div>\n  <div class=\"form-group\">\n    <label>Prefab Name</label>\n    <input type=\"text\" formControlName=\"prefab\" class=\"form-control\" placeholder=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"assetbundle\">AssetBundle File</label>\n    <input type=\"file\" class=\"form-control-file\"  (change)=\"onFileChange($event)\" #fileInput>\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\n</form>\n\n<h2 class=\"page-header\">Manage Existing Assetbundles</h2>\n<table class=\"table\">\n  <tr>\n    <th>Title</th>\n    <th>Prefab Name</th>\n    <th>File Name</th>\n    <th>Delete</th>\n</tr>\n<tr *ngFor=\"let thisbundle of bundles\">\n  <td >{{thisbundle.title}}</td>\n  <td >{{thisbundle.prefab}}</td>\n  <td >{{thisbundle.fileLocation}}</td>\n\n  <td ><a [routerLink]=\"\" (click)=\"deleteBundle(thisbundle._id)\">Delete</a></td>\n</tr>\n</table>"
+
+/***/ }),
+
+/***/ "./src/app/components/assetmanager/assetmanager.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AssetmanagerComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_validate_service__ = __webpack_require__("./src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var AssetmanagerComponent = /** @class */ (function () {
+    function AssetmanagerComponent(validateService, flashMessagesService, authService, router, fb) {
+        this.validateService = validateService;
+        this.flashMessagesService = flashMessagesService;
+        this.authService = authService;
+        this.router = router;
+        this.fb = fb;
+        this.bundles = [];
+        this.createForm();
+    }
+    AssetmanagerComponent.prototype.createForm = function () {
+        this.form = this.fb.group({
+            title: ["", String],
+            prefab: ["", String],
+            assetbundle: null
+        });
+    };
+    AssetmanagerComponent.prototype.onFileChange = function (event) {
+        console.log(event.target.files[0]);
+        var formLocation = this.form;
+        if (event.target.files.length > 0) {
+            var file = event.target.files[0];
+            formLocation.get('assetbundle').setValue(file);
+        }
+    };
+    AssetmanagerComponent.prototype.prepareSave = function () {
+        var input = new FormData();
+        input.append('title', this.form.get('title').value);
+        input.append('prefab', this.form.get('prefab').value);
+        input.append('assetbundle', this.form.get('assetbundle').value);
+        //console.log(input);
+        return input;
+    };
+    AssetmanagerComponent.prototype.onSubmit = function () {
+        var formModel = this.prepareSave();
+        var message = this.flashMessagesService;
+        var naviagtion = this.router;
+        this.authService.uploadBundle(formModel).subscribe(function (data) {
+            if (data.success) {
+                message.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                window.location.reload();
+            }
+            else {
+                message.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+            }
+        });
+    };
+    AssetmanagerComponent.prototype.deleteBundle = function (id) {
+        var naviagtion = this.router;
+        var message = this.flashMessagesService;
+        this.authService.removeBundle({ id: id }).subscribe(function (data) {
+            if (data.success) {
+                message.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                window.location.reload();
+            }
+            else {
+                message.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                window.location.reload();
+            }
+        });
+    };
+    AssetmanagerComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.authService.getAllAssetBundles().subscribe(function (assetbundles) {
+            //this.user = profile.user;
+            console.log(assetbundles);
+            var count = 0;
+            assetbundles.bundles.forEach(function (element) {
+                _this.bundles[count] = element;
+                //console.log(this.bundles[count]);
+                count++;
+            });
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
+    };
+    AssetmanagerComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-assetmanager',
+            template: __webpack_require__("./src/app/components/assetmanager/assetmanager.component.html"),
+            styles: [__webpack_require__("./src/app/components/assetmanager/assetmanager.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"], __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */], __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]])
+    ], AssetmanagerComponent);
+    return AssetmanagerComponent;
 }());
 
 
@@ -156,7 +295,7 @@ module.exports = ""
 /***/ "./src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard.</p>"
+module.exports = "<h2 class=\"page-header\">Dashboard</h2>\r\n<p>Welcome to your dashboard.</p>\r\n<div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\">\r\n        <h2>Manage User Accounts</h2>\r\n        <p>Create and remove user accounts.</p>\r\n        <p><a class=\"btn btn-default\" href=\"/register\" role=\"button\">Manage</a></p>\r\n      </div>\r\n      <div class=\"col-md-4\">\r\n        <h2>Manage Unity Assets</h2>\r\n        <p>Upload new game bundles.</p>\r\n        <p><a class=\"btn btn-default\" href=\"/assetmanager\" role=\"button\">Manage</a></p>\r\n     </div>\r\n      \r\n</div>"
 
 /***/ }),
 
@@ -206,7 +345,7 @@ module.exports = ""
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron text-center\">\n  <h1>AR Car Manager</h1>\n  <p class=\"lead\">Welcome to the AR Car Authentication application.</p>\n  <P>Authorized Users Only</P>\n\n\n</div>\n<div class=\"jumbotron\">\n  <app-login></app-login>\n  \n</div>"
+module.exports = "<div class=\"jumbotron text-center\">\r\n  <h1>AR Car Manager</h1>\r\n  <p class=\"lead\">Welcome to the AR Car Authentication application.</p>\r\n  <P>Authorized Users Only</P>\r\n\r\n\r\n</div>\r\n<div class=\"jumbotron\">\r\n  <app-login></app-login>\r\n  \r\n</div>"
 
 /***/ }),
 
@@ -256,7 +395,7 @@ module.exports = ""
 /***/ "./src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form (submit)=\"onLoginSubmit()\">\n    <div class=\"form-group\">\n        <label>Username</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"username\" name=\"username\">\n      </div>\n      <div class=\"form-group\">\n        <label>Password</label>\n        <input type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" name=\"password\">\n      </div>\n      <input type=\"submit\" class=\"btn btn-primary\" value=\"login\">\n</form>"
+module.exports = "<form (submit)=\"onLoginSubmit()\">\r\n    <div class=\"form-group\">\r\n        <label>Username</label>\r\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"username\" name=\"username\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label>Password</label>\r\n        <input type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" name=\"password\">\r\n      </div>\r\n      <input type=\"submit\" class=\"btn btn-primary\" value=\"login\">\r\n</form>"
 
 /***/ }),
 
@@ -336,7 +475,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n    <div class=\"container\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a class=\"navbar-brand\" href=\"#\">AR Car Manager</a>\n      </div>\n      <div id=\"navbar\" class=\"collapse navbar-collapse\">\n        <ul class=\"nav navbar-nav navbar-left\">\n          <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['']\">Home</a></li>\n        </ul>\n\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['dashboard']\">Dashboard</a></li>\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['profile']\">Profile</a></li>\n            <li *ngIf='!authService.loggedIn()'[routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['login']\">Login</a></li>\n            <li *ngIf='!authService.loggedIn()'[routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['register']\">Register</a></li>\n            <li *ngIf='authService.loggedIn()'><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\n          </ul>\n      </div><!--/.nav-collapse -->\n    </div>\n  </nav>"
+module.exports = "<nav class=\"navbar navbar-default\">\r\n    <div class=\"container\">\r\n      <div class=\"navbar-header\">\r\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n          <span class=\"sr-only\">Toggle navigation</span>\r\n          <span class=\"icon-bar\"></span>\r\n          <span class=\"icon-bar\"></span>\r\n          <span class=\"icon-bar\"></span>\r\n        </button>\r\n        <a class=\"navbar-brand\" href=\"#\">AR Car Manager</a>\r\n      </div>\r\n      <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n        <ul class=\"nav navbar-nav navbar-left\">\r\n            <li *ngIf='!authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['']\">Home</a></li>\r\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['dashboard']\">Home</a></li>\r\n        </ul>\r\n\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['dashboard']\">Dashboard</a></li>\r\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['profile']\">Profile</a></li>\r\n            <li *ngIf='!authService.loggedIn()'[routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['login']\">Login</a></li>\r\n            <li *ngIf='!authService.loggedIn()'[routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['register']\">Register</a></li>\r\n            <li *ngIf='authService.loggedIn()'><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n          </ul>\r\n      </div><!--/.nav-collapse -->\r\n    </div>\r\n  </nav>"
 
 /***/ }),
 
@@ -402,7 +541,7 @@ module.exports = ""
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n  </ul>\n</div>"
+module.exports = "<div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.name}}</h2>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\r\n  </ul>\r\n</div>"
 
 /***/ }),
 
@@ -465,7 +604,7 @@ module.exports = ""
 /***/ "./src/app/components/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Register</h2>\n<form (submit)=\"onRegisterSubmit()\">\n  <div class=\"form-group\">\n    <label>Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Username</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Email</label>\n    <input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\n</form>"
+module.exports = "<h2 class=\"page-header\">Create new user account</h2>\r\n<form (submit)=\"onRegisterSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label>Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Username</label>\r\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Email</label>\r\n    <input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Password</label>\r\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\r\n</form>\r\n\r\n<h2 class=\"page-header\">Manage Existing User Accounts</h2>\r\n<table class=\"table\">\r\n  <tr>\r\n    <th>Username</th>\r\n    <th>Name</th>\r\n    <th>Email</th>\r\n    <th>Active</th>\r\n    <th>Admin</th>\r\n    <th>Delete</th>\r\n</tr>\r\n<tr *ngFor=\"let thisuser of user\">\r\n  <td >{{thisuser.username}}</td>\r\n  <td >{{thisuser.name}}</td>\r\n  <td >{{thisuser.email}}</td>\r\n  <td *ngIf=\"thisuser.isActive;\"><label><input type=\"checkbox\" value=\"\" checked (click)=\"disableAccount(thisuser.id)\"></label></td>\r\n  <td *ngIf=\"!(thisuser.isActive);\"><label><input type=\"checkbox\" value=\"\" (click)=\"enableAccount(thisuser.id)\"></label></td>\r\n  <td *ngIf=\"thisuser.isAdmin;\"><label><input type=\"checkbox\" value=\"\" checked (click)=\"disableAdmin(thisuser.id)\"></label></td>\r\n  <td *ngIf=\"!(thisuser.isAdmin);\"><label><input type=\"checkbox\" value=\"\" (click)=\"enableAdmin(thisuser.id)\"></label></td>\r\n\r\n  <td ><a [routerLink]=\"\" (click)=\"deleteAccount(thisuser.id)\">Delete</a></td>\r\n</tr>\r\n</table>\r\n"
 
 /***/ }),
 
@@ -500,8 +639,22 @@ var RegisterComponent = /** @class */ (function () {
         this.flashMessagesService = flashMessagesService;
         this.authService = authService;
         this.router = router;
+        this.user = [];
     }
     RegisterComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.authService.getAllUsers().subscribe(function (profiles) {
+            //this.user = profile.user;
+            var count = 0;
+            profiles.forEach(function (element) {
+                _this.user[count] = element;
+                console.log(_this.user[count]);
+                count++;
+            });
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
     };
     RegisterComponent.prototype.onRegisterSubmit = function () {
         var user = {
@@ -526,12 +679,74 @@ var RegisterComponent = /** @class */ (function () {
             console.log(data);
             if (data.success) {
                 console.log("success");
-                message.show('You are now registered and can log in', { cssClass: 'alert-success', timeout: 3000 });
-                naviagtion.navigate(['/login']);
+                message.show('User was registered successfully and can now log in', { cssClass: 'alert-success', timeout: 3000 });
+                naviagtion.navigate(['/register']);
+                window.location.reload();
             }
             else {
                 message.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
                 naviagtion.navigate(['/register']);
+            }
+        });
+    };
+    RegisterComponent.prototype.deleteAccount = function (user) {
+        var naviagtion = this.router;
+        console.log(user);
+        this.authService.deleteUser({ id: user }).subscribe(function (data) {
+            if (data.success) {
+                console.log("success");
+                window.location.reload();
+            }
+            else {
+                console.log("not succesful");
+            }
+        });
+    };
+    RegisterComponent.prototype.disableAccount = function (userID) {
+        console.log(userID);
+        this.authService.disableAccount({ id: userID }).subscribe(function (data) {
+            if (data.success) {
+                console.log("success");
+                window.location.reload();
+            }
+            else {
+                console.log("not succesful");
+            }
+        });
+    };
+    RegisterComponent.prototype.enableAccount = function (userID) {
+        console.log(userID);
+        this.authService.enableAccount({ id: userID }).subscribe(function (data) {
+            if (data.success) {
+                console.log("success");
+                window.location.reload();
+            }
+            else {
+                console.log("not succesful");
+            }
+        });
+    };
+    RegisterComponent.prototype.disableAdmin = function (userID) {
+        console.log(userID);
+        this.authService.disableAdmin({ id: userID }).subscribe(function (data) {
+            if (data.success) {
+                console.log("success");
+                window.location.reload();
+            }
+            else {
+                console.log("not succesful");
+            }
+        });
+    };
+    RegisterComponent.prototype.enableAdmin = function (userID) {
+        console.log(userID);
+        this.authService.enableAdmin({ id: userID }).subscribe(function (data) {
+            if (data.success) {
+                console.log("success");
+                window.location.reload();
+            }
+            else {
+                console.log("not succesful");
             }
         });
     };
@@ -624,14 +839,16 @@ var AuthService = /** @class */ (function () {
     }
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.post('users/register', user, { headers: headers })
+        return this.http.post('API/register', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('users/authenticate', user, { headers: headers })
+        return this.http.post('API/authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.getProfile = function () {
@@ -639,7 +856,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('users/profile', { headers: headers })
+        return this.http.get('API/profile', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -647,6 +864,78 @@ var AuthService = /** @class */ (function () {
         localStorage.setItem('user', JSON.stringify(user));
         this.authToken = token;
         this.user = user;
+    };
+    AuthService.prototype.getAllUsers = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('API/getAllUsers', { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.getAllAssetBundles = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('API/getAllAssetBundles', { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.deleteUser = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('API/deleteUser', id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.removeBundle = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('API/removeBundle', id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.disableAccount = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('API/disableAccount', id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.enableAccount = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('API/enableAccount', id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.disableAdmin = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('API/disableAdmin', id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.enableAdmin = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('API/enableAdmin', id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.uploadBundle = function (formData) {
+        //console.log(formData);
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        return this.http.post('API/uploadAsset', formData, { headers: headers })
+            .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loadToken = function () {
         var token = localStorage.getItem('id_token');

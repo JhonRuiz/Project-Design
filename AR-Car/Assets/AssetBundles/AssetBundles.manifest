@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3330866461
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: audia6
+      Dependencies: {}
+    Info_1:
+      Name: cube
+      Dependencies: {}
+    Info_2:
+      Name: gt86
+      Dependencies: {}
+    Info_3:
+      Name: rav4
+      Dependencies: {}

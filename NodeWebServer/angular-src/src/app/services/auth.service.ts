@@ -13,15 +13,17 @@ export class AuthService {
 
   registerUser(user) {
     let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('users/register', user,{headers: headers})
+    return this.http.post('API/register', user,{headers: headers})
     .map(res => res.json());
   }
 
   authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('users/authenticate', user,{headers: headers})
+    return this.http.post('API/authenticate', user,{headers: headers})
     .map(res => res.json());
   }
 
@@ -31,7 +33,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('users/profile', {headers: headers})
+    return this.http.get('API/profile', {headers: headers})
     .map(res => res.json());
   }
 
@@ -41,6 +43,87 @@ export class AuthService {
       this.authToken = token;
       this.user = user;
     }
+
+  getAllUsers() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('API/getAllUsers', {headers: headers})
+    .map(res => res.json());
+  }
+
+  getAllAssetBundles() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('API/getAllAssetBundles', {headers: headers})
+    .map(res => res.json());
+  }
+
+  deleteUser(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('API/deleteUser', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  removeBundle(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('API/removeBundle', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  disableAccount(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('API/disableAccount', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  enableAccount(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('API/enableAccount', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  disableAdmin(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('API/disableAdmin', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  enableAdmin(id) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('API/enableAdmin', id, {headers: headers})
+    .map(res => res.json());
+  }
+
+  uploadBundle(formData) {
+    //console.log(formData);
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    return this.http.post('API/uploadAsset', formData, {headers: headers})
+    .map(res => res.json());
+  }
   
   loadToken() {
     const token = localStorage.getItem('id_token');
