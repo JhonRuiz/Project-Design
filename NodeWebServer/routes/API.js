@@ -373,13 +373,14 @@ router.post('/uploadAsset', passport.authenticate('jwt', {session:false}), funct
                 //Otherwise, upload the file details to database
                 else {
                     //Create new AssetBundle with POST'd details
-                    let newBundle = AssetBundle({ title: req.body.title, prefab: req.body.prefab, fileLocation: req.file.originalname});
+                    //console.log(req.file.platform);
+                    let newBundle = AssetBundle({ title: req.body.title, prefab: req.body.prefab, fileLocation: req.file.originalname, platform: req.body.platform});
                     //Add the bundle to database using addBundle function from AssetBundle model
                     AssetBundle.addBundle(newBundle, function(err) {
                         //If error, return false with message
                         if (err) {
                             //Return false with message
-                            return res.json({success: false, msg: "File could not be uploaded."})
+                            return res.json({success: false, msg: "File could not be uploaded." + err})
                         }
                         //If no error, file was successfully added to the database.
                         return res.json({success: true, msg: "File uploaded sucessfully"})

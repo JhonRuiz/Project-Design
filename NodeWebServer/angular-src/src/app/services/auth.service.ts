@@ -3,6 +3,8 @@ import { Http, Headers} from "@angular/http";
 import 'rxjs/add/operator/map';
 import { tokenNotExpired} from 'angular2-jwt';
 
+let api = "http://localhost:8080/API/";
+
 
 @Injectable()
 export class AuthService {
@@ -16,14 +18,14 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('API/register', user,{headers: headers})
+    return this.http.post(api + 'register', user,{headers: headers})
     .map(res => res.json());
   }
 
   authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('API/authenticate', user,{headers: headers})
+    return this.http.post(api + 'authenticate', user,{headers: headers})
     .map(res => res.json());
   }
 
@@ -33,7 +35,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('API/profile', {headers: headers})
+    return this.http.get(api + 'profile', {headers: headers})
     .map(res => res.json());
   }
 
@@ -49,7 +51,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('API/getAllUsers', {headers: headers})
+    return this.http.get(api + 'getAllUsers', {headers: headers})
     .map(res => res.json());
   }
 
@@ -58,7 +60,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('API/getAllAssetBundles', {headers: headers})
+    return this.http.get(api + 'getAllAssetBundles', {headers: headers})
     .map(res => res.json());
   }
 
@@ -67,7 +69,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('API/deleteUser', id, {headers: headers})
+    return this.http.post(api + 'deleteUser', id, {headers: headers})
     .map(res => res.json());
   }
 
@@ -76,7 +78,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('API/removeBundle', id, {headers: headers})
+    return this.http.post(api + 'removeBundle', id, {headers: headers})
     .map(res => res.json());
   }
 
@@ -85,7 +87,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('API/disableAccount', id, {headers: headers})
+    return this.http.post(api + 'disableAccount', id, {headers: headers})
     .map(res => res.json());
   }
 
@@ -94,7 +96,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('API/enableAccount', id, {headers: headers})
+    return this.http.post(api + 'enableAccount', id, {headers: headers})
     .map(res => res.json());
   }
 
@@ -103,7 +105,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('API/disableAdmin', id, {headers: headers})
+    return this.http.post(api + 'disableAdmin', id, {headers: headers})
     .map(res => res.json());
   }
 
@@ -112,7 +114,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.post('API/enableAdmin', id, {headers: headers})
+    return this.http.post(api + 'enableAdmin', id, {headers: headers})
     .map(res => res.json());
   }
 
@@ -121,7 +123,7 @@ export class AuthService {
     let headers = new Headers();
     this.loadToken();
     headers.append('Authorization', this.authToken);
-    return this.http.post('API/uploadAsset', formData, {headers: headers})
+    return this.http.post(api + 'uploadAsset', formData, {headers: headers})
     .map(res => res.json());
   }
   

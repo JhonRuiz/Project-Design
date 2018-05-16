@@ -47,8 +47,8 @@ namespace Lean.Touch
 				return;
 			}
 
-			// Call event
-			OnFingerDrag.Invoke(finger);
+            // Call event
+            OnFingerDrag.Invoke(finger);
 		}
 	}
 }
