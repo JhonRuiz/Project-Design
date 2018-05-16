@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CarControl : MonoBehaviour {
+public class CarControl : MonoBehaviour
+{
     [SerializeField]
     public string carName;
     public GameObject carObject;
@@ -12,20 +13,26 @@ public class CarControl : MonoBehaviour {
     public GameObject carBody;
     public Vector2 carBodyTextureOffset;
     public Vector2 carDoorTextureOffset;
-    
+
+    Vector3 dist;
+    float posX;
+    float posY;
+
 
     //public SpriteRenderer sr;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-   
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
 
 
 
@@ -60,15 +67,33 @@ public class CarControl : MonoBehaviour {
                 carDoorRenderers[i].material.mainTextureScale = carDoorTextureOffset;
             }
         }
-        
+
 
 
         carBodyRenderer.material = mat;
         carBodyRenderer.material.mainTextureScale = carBodyTextureOffset;
 
-        
-        
+
+
 
 
     }
+
+    void OnMouseDown()
+    {
+        //dist = Camera.main.WorldToScreenPoint(transform.position);
+        posX = Input.mousePosition.x - dist.x;
+        posY = Input.mousePosition.y - dist.y;
+
+    }
+
+    void OnMouseDrag()
+    {
+
+        Vector3 curPos = new Vector3(Input.mousePosition.x - posX,
+                     Input.mousePosition.y - posY, dist.z);
+        Debug.Log(posX + "and" + curPos.x);
+        carObject.transform.Rotate(0, curPos.x / 300, 0);
+    }
 }
+
