@@ -52,7 +52,6 @@ namespace Lean.Touch
 			// Calculate the rotation values based on these fingers
 			var center  = LeanGesture.GetScreenCenter(fingers);
 			var degrees = LeanGesture.GetTwistDegrees(fingers);
-            //var position = fingers.
 
 			// Perform the rotation
 			Rotate(center, degrees);
@@ -74,7 +73,6 @@ namespace Lean.Touch
 			}
 			else
 			{
-                Debug.Log("Trying to rotate");
 				transform.rotation *= Quaternion.AngleAxis(degrees, RotateAxis);
 			}
 		}

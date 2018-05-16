@@ -12,11 +12,7 @@ public class CarControl : MonoBehaviour {
     public GameObject carBody;
     public Vector2 carBodyTextureOffset;
     public Vector2 carDoorTextureOffset;
-
-    Vector3 dist;
-    float posX;
-    float posY;
-
+    
 
     //public SpriteRenderer sr;
 
@@ -75,22 +71,4 @@ public class CarControl : MonoBehaviour {
 
 
     }
-
-    void OnMouseDown()
-    {
-        //dist = Camera.main.WorldToScreenPoint(transform.position);
-        posX = Input.mousePosition.x - dist.x;
-        posY = Input.mousePosition.y - dist.y;
-
-    }
-
-    void OnMouseDrag()
-    {
-
-        Vector3 curPos = new Vector3(Input.mousePosition.x - posX,
-                     Input.mousePosition.y - posY, dist.z);
-        Debug.Log(posX + "and" + curPos.x);
-        carObject.transform.Rotate(0, curPos.x / 300, 0);
-    }
 }
-

@@ -13,10 +13,6 @@ const AssetBundleSchema = mongoose.Schema({
     fileLocation: {
         type: String,
         required: true
-    },
-    platform: {
-        type: String,
-        required: true
     }
 });
 

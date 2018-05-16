@@ -22,8 +22,7 @@ export class AssetmanagerComponent implements OnInit {
     this.form = this.fb.group({
       title: ["", String],
       prefab: ["", String],
-      assetbundle: null,
-      platform: ["", String]
+      assetbundle: null
     });
   }
 
@@ -41,14 +40,13 @@ export class AssetmanagerComponent implements OnInit {
     input.append('title', this.form.get('title').value);
     input.append('prefab', this.form.get('prefab').value);
     input.append('assetbundle', this.form.get('assetbundle').value);
-    input.append('platform', this.form.get('platform').value);
-    console.log(this.form.get('platform').value);
+    //console.log(input);
     return input;
   }
 
   onSubmit() {
     const formModel = this.prepareSave();
-    console.log(formModel);
+    
     let message = this.flashMessagesService;
     let naviagtion = this.router;
       this.authService.uploadBundle(formModel).subscribe(function(data) {

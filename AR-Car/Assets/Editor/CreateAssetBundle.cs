@@ -4,19 +4,9 @@ using UnityEditor;
 
 public class CreateAssetBundles : MonoBehaviour
 {
-    [MenuItem("Assets/Build Windows AssetBundles")]
-    static void BuildWindowsAssetBundles()
+    [MenuItem("Assets/Build AssetBundles")]
+    static void BuildAllAssetBundles()
     {
-        BuildPipeline.BuildAssetBundles("Assets/AssetBundles/Windows", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
-    }
-    [MenuItem("Assets/Build iOS AssetBundles")]
-    static void BuildiOSAssetBundles()
-    {
-        BuildPipeline.BuildAssetBundles("Assets/AssetBundles/iOS", BuildAssetBundleOptions.None, BuildTarget.iOS);
-    }
-    [MenuItem("Assets/Build Android AssetBundles")]
-    static void BuildAndroidAssetBundles()
-    {
-        BuildPipeline.BuildAssetBundles("Assets/AssetBundles/Android", BuildAssetBundleOptions.None, BuildTarget.Android);
+        BuildPipeline.BuildAssetBundles("Assets/AssetBundles", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
     }
 }
