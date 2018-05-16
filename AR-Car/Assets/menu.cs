@@ -11,6 +11,8 @@ public class menu : MonoBehaviour {
     public GameObject car_selector_interface;
     public GameObject colour_selector_interface;
     public GameObject download_selector_interface;
+    public CanvasGroup canvasgroup;
+    Color colorToFadeTo;
     // Use this for initialization
     void Start () {
 
@@ -52,6 +54,8 @@ public class menu : MonoBehaviour {
     {
         if (car_selector_interface.gameObject.activeSelf == true)
         {
+
+
             car_selector_interface.gameObject.SetActive(false);
             Debug.Log("Removing interface");
         }
@@ -95,4 +99,7 @@ public class menu : MonoBehaviour {
 
 
     }
+
+   
+    
 }
