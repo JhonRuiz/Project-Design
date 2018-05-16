@@ -2445,6 +2445,7 @@ MonoBehaviour:
   carBody: {fileID: 817406632}
   carBodyTextureOffset: {x: 13, y: 13}
   carDoorTextureOffset: {x: 0.088, y: 0.088}
+  doorAnimationsClose: {fileID: 0}
 --- !u!65 &146863335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7839,6 +7840,7 @@ MonoBehaviour:
   carBody: {fileID: 1984972294}
   carBodyTextureOffset: {x: 0.16, y: 0.16}
   carDoorTextureOffset: {x: 0.16, y: 0.16}
+  doorAnimationsClose: {fileID: 0}
 --- !u!1 &522383959
 GameObject:
   m_ObjectHideFlags: 0
@@ -8520,7 +8522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &567118183
@@ -14080,6 +14082,7 @@ MonoBehaviour:
   carBody: {fileID: 1972877464}
   carBodyTextureOffset: {x: 0.16, y: 0.16}
   carDoorTextureOffset: {x: 0.16, y: 0.16}
+  doorAnimationsClose: {fileID: 0}
 --- !u!95 &961035665
 Animator:
   serializedVersion: 3
@@ -17253,6 +17256,7 @@ MonoBehaviour:
   carBody: {fileID: 408958291}
   carBodyTextureOffset: {x: 1, y: 1}
   carDoorTextureOffset: {x: 0, y: 0}
+  doorAnimationsClose: {fileID: 0}
 --- !u!4 &1166891978
 Transform:
   m_ObjectHideFlags: 0
