@@ -37,7 +37,7 @@ public class ButtonListControl : MonoBehaviour {
         }
 
         //This for loop is just to demonstrate the menu working with multiple cars. Logic is the same as above, just in a different loop.
-        /*
+        
         for (int i = 1; i <= 20; i++)
         {
             GameObject button = Instantiate(buttonTemplate) as GameObject;
@@ -45,7 +45,7 @@ public class ButtonListControl : MonoBehaviour {
             button.GetComponent<ButtonMgr>().setCar(cars.transform.GetChild(0).GetComponent<CarControl>().carObject);
             button.transform.SetParent(buttonTemplate.transform.parent, false);
         }
-         */
+         
     }
     
     public void createMenuItem(CarControl ctrl) {
