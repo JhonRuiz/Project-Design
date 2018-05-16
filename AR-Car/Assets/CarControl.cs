@@ -13,6 +13,7 @@ public class CarControl : MonoBehaviour
     public GameObject carBody;
     public Vector2 carBodyTextureOffset;
     public Vector2 carDoorTextureOffset;
+    public Animation doorAnimationsClose;
 
     Vector3 dist;
     float posX;
