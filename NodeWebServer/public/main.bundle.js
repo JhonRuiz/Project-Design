@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\r\n<div class=\"container\">\r\n  <flash-messages></flash-messages>\r\n  <router-outlet></router-outlet>\r\n\r\n</div>"
+module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n  <flash-messages></flash-messages>\n  <router-outlet></router-outlet>\n\n</div>"
 
 /***/ }),
 
@@ -162,7 +162,7 @@ module.exports = ""
 /***/ "./src/app/components/assetmanager/assetmanager.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Upload new AssetBundle</h2>\n<form [formGroup]=\"form\" (submit)=\"onSubmit()\">\n  <div class=\"form-group\">\n    <label>Bundle Title</label>\n    <input type=\"text\" placeholder=\"\" formControlName=\"title\" id=\"title\" class=\"form-control\" >\n  </div>\n  <div class=\"form-group\">\n    <label>Prefab Name</label>\n    <input type=\"text\" formControlName=\"prefab\" class=\"form-control\" placeholder=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"assetbundle\">AssetBundle File</label>\n    <input type=\"file\" class=\"form-control-file\"  (change)=\"onFileChange($event)\" #fileInput>\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\n</form>\n\n<h2 class=\"page-header\">Manage Existing Assetbundles</h2>\n<table class=\"table\">\n  <tr>\n    <th>Title</th>\n    <th>Prefab Name</th>\n    <th>File Name</th>\n    <th>Delete</th>\n</tr>\n<tr *ngFor=\"let thisbundle of bundles\">\n  <td >{{thisbundle.title}}</td>\n  <td >{{thisbundle.prefab}}</td>\n  <td >{{thisbundle.fileLocation}}</td>\n\n  <td ><a [routerLink]=\"\" (click)=\"deleteBundle(thisbundle._id)\">Delete</a></td>\n</tr>\n</table>"
+module.exports = "<h2 class=\"page-header\">Upload new AssetBundle</h2>\n<form [formGroup]=\"form\" (submit)=\"onSubmit()\">\n  <div class=\"form-group\">\n    <label>Bundle Title</label>\n    <input type=\"text\" placeholder=\"\" formControlName=\"title\" id=\"title\" class=\"form-control\" >\n  </div>\n  <div class=\"form-group\">\n    <label>Prefab Name</label>\n    <input type=\"text\" formControlName=\"prefab\" class=\"form-control\" placeholder=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"assetbundle\">AssetBundle File</label>\n    <input type=\"file\" class=\"form-control-file\"  (change)=\"onFileChange($event)\" #fileInput>\n  </div>\n  <div class=\"form-group\">\n    <label>Platform</label>\n    <select class=\"selectpicker\" formControlName=\"platform\" class=\"form-control\">\n      <option>Windows</option>\n      <option>Android</option>\n      <option>iOS</option>\n    </select>\n  </div>\n  \n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\n</form>\n\n<h2 class=\"page-header\">Manage Existing Assetbundles</h2>\n<table class=\"table\">\n  <tr>\n    <th>Title</th>\n    <th>Prefab Name</th>\n    <th>File Name</th>\n    <th>Platform</th>\n    <th>Delete</th>\n</tr>\n<tr *ngFor=\"let thisbundle of bundles\">\n  <td >{{thisbundle.title}}</td>\n  <td >{{thisbundle.prefab}}</td>\n  <td >{{thisbundle.fileLocation}}</td>\n  <td >{{thisbundle.platform}}</td>\n  <td ><a [routerLink]=\"\" (click)=\"deleteBundle(thisbundle._id)\">Delete</a></td>\n</tr>\n</table>"
 
 /***/ }),
 
@@ -207,7 +207,8 @@ var AssetmanagerComponent = /** @class */ (function () {
         this.form = this.fb.group({
             title: ["", String],
             prefab: ["", String],
-            assetbundle: null
+            assetbundle: null,
+            platform: ["", String]
         });
     };
     AssetmanagerComponent.prototype.onFileChange = function (event) {
@@ -223,11 +224,13 @@ var AssetmanagerComponent = /** @class */ (function () {
         input.append('title', this.form.get('title').value);
         input.append('prefab', this.form.get('prefab').value);
         input.append('assetbundle', this.form.get('assetbundle').value);
-        //console.log(input);
+        input.append('platform', this.form.get('platform').value);
+        console.log(this.form.get('platform').value);
         return input;
     };
     AssetmanagerComponent.prototype.onSubmit = function () {
         var formModel = this.prepareSave();
+        console.log(formModel);
         var message = this.flashMessagesService;
         var naviagtion = this.router;
         this.authService.uploadBundle(formModel).subscribe(function (data) {
@@ -295,7 +298,7 @@ module.exports = ""
 /***/ "./src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Dashboard</h2>\r\n<p>Welcome to your dashboard.</p>\r\n<div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\">\r\n        <h2>Manage User Accounts</h2>\r\n        <p>Create and remove user accounts.</p>\r\n        <p><a class=\"btn btn-default\" href=\"/register\" role=\"button\">Manage</a></p>\r\n      </div>\r\n      <div class=\"col-md-4\">\r\n        <h2>Manage Unity Assets</h2>\r\n        <p>Upload new game bundles.</p>\r\n        <p><a class=\"btn btn-default\" href=\"/assetmanager\" role=\"button\">Manage</a></p>\r\n     </div>\r\n      \r\n</div>"
+module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard.</p>\n<div>\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <h2>Manage User Accounts</h2>\n        <p>Create and remove user accounts.</p>\n        <p><a class=\"btn btn-default\" href=\"/register\" role=\"button\">Manage</a></p>\n      </div>\n      <div class=\"col-md-4\">\n        <h2>Manage Unity Assets</h2>\n        <p>Upload new game bundles.</p>\n        <p><a class=\"btn btn-default\" href=\"/assetmanager\" role=\"button\">Manage</a></p>\n     </div>\n      \n</div>"
 
 /***/ }),
 
@@ -345,7 +348,7 @@ module.exports = ""
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron text-center\">\r\n  <h1>AR Car Manager</h1>\r\n  <p class=\"lead\">Welcome to the AR Car Authentication application.</p>\r\n  <P>Authorized Users Only</P>\r\n\r\n\r\n</div>\r\n<div class=\"jumbotron\">\r\n  <app-login></app-login>\r\n  \r\n</div>"
+module.exports = "<div class=\"jumbotron text-center\">\n  <h1>AR Car Manager</h1>\n  <p class=\"lead\">Welcome to the AR Car Authentication application.</p>\n  <P>Authorized Users Only</P>\n\n\n</div>\n<div class=\"jumbotron\">\n  <app-login></app-login>\n  \n</div>"
 
 /***/ }),
 
@@ -395,7 +398,7 @@ module.exports = ""
 /***/ "./src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form (submit)=\"onLoginSubmit()\">\r\n    <div class=\"form-group\">\r\n        <label>Username</label>\r\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"username\" name=\"username\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label>Password</label>\r\n        <input type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" name=\"password\">\r\n      </div>\r\n      <input type=\"submit\" class=\"btn btn-primary\" value=\"login\">\r\n</form>"
+module.exports = "<form (submit)=\"onLoginSubmit()\">\n    <div class=\"form-group\">\n        <label>Username</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"username\" name=\"username\">\n      </div>\n      <div class=\"form-group\">\n        <label>Password</label>\n        <input type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" name=\"password\">\n      </div>\n      <input type=\"submit\" class=\"btn btn-primary\" value=\"login\">\n</form>"
 
 /***/ }),
 
@@ -475,7 +478,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\r\n    <div class=\"container\">\r\n      <div class=\"navbar-header\">\r\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n          <span class=\"sr-only\">Toggle navigation</span>\r\n          <span class=\"icon-bar\"></span>\r\n          <span class=\"icon-bar\"></span>\r\n          <span class=\"icon-bar\"></span>\r\n        </button>\r\n        <a class=\"navbar-brand\" href=\"#\">AR Car Manager</a>\r\n      </div>\r\n      <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n        <ul class=\"nav navbar-nav navbar-left\">\r\n            <li *ngIf='!authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['']\">Home</a></li>\r\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['dashboard']\">Home</a></li>\r\n        </ul>\r\n\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['dashboard']\">Dashboard</a></li>\r\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['profile']\">Profile</a></li>\r\n            <li *ngIf='!authService.loggedIn()'[routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['login']\">Login</a></li>\r\n            <li *ngIf='!authService.loggedIn()'[routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['register']\">Register</a></li>\r\n            <li *ngIf='authService.loggedIn()'><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\r\n          </ul>\r\n      </div><!--/.nav-collapse -->\r\n    </div>\r\n  </nav>"
+module.exports = "<nav class=\"navbar navbar-default\">\n    <div class=\"container\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a class=\"navbar-brand\" href=\"#\">AR Car Manager</a>\n      </div>\n      <div id=\"navbar\" class=\"collapse navbar-collapse\">\n        <ul class=\"nav navbar-nav navbar-left\">\n            <li *ngIf='!authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['']\">Home</a></li>\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['dashboard']\">Home</a></li>\n        </ul>\n\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['dashboard']\">Dashboard</a></li>\n            <li *ngIf='authService.loggedIn()' [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['profile']\">Profile</a></li>\n            <li *ngIf='!authService.loggedIn()'[routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['login']\">Login</a></li>\n            <li *ngIf='!authService.loggedIn()'[routerLinkActive]=\"['active']\" [routerLinkActiveOptions] =\"{exact:true}\"><a [routerLink]=\"['register']\">Register</a></li>\n            <li *ngIf='authService.loggedIn()'><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\n          </ul>\n      </div><!--/.nav-collapse -->\n    </div>\n  </nav>"
 
 /***/ }),
 
@@ -541,7 +544,7 @@ module.exports = ""
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.name}}</h2>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\r\n  </ul>\r\n</div>"
+module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -604,7 +607,7 @@ module.exports = ""
 /***/ "./src/app/components/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Create new user account</h2>\r\n<form (submit)=\"onRegisterSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label>Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Username</label>\r\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Email</label>\r\n    <input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Password</label>\r\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\r\n</form>\r\n\r\n<h2 class=\"page-header\">Manage Existing User Accounts</h2>\r\n<table class=\"table\">\r\n  <tr>\r\n    <th>Username</th>\r\n    <th>Name</th>\r\n    <th>Email</th>\r\n    <th>Active</th>\r\n    <th>Admin</th>\r\n    <th>Delete</th>\r\n</tr>\r\n<tr *ngFor=\"let thisuser of user\">\r\n  <td >{{thisuser.username}}</td>\r\n  <td >{{thisuser.name}}</td>\r\n  <td >{{thisuser.email}}</td>\r\n  <td *ngIf=\"thisuser.isActive;\"><label><input type=\"checkbox\" value=\"\" checked (click)=\"disableAccount(thisuser.id)\"></label></td>\r\n  <td *ngIf=\"!(thisuser.isActive);\"><label><input type=\"checkbox\" value=\"\" (click)=\"enableAccount(thisuser.id)\"></label></td>\r\n  <td *ngIf=\"thisuser.isAdmin;\"><label><input type=\"checkbox\" value=\"\" checked (click)=\"disableAdmin(thisuser.id)\"></label></td>\r\n  <td *ngIf=\"!(thisuser.isAdmin);\"><label><input type=\"checkbox\" value=\"\" (click)=\"enableAdmin(thisuser.id)\"></label></td>\r\n\r\n  <td ><a [routerLink]=\"\" (click)=\"deleteAccount(thisuser.id)\">Delete</a></td>\r\n</tr>\r\n</table>\r\n"
+module.exports = "<h2 class=\"page-header\">Create new user account</h2>\n<form (submit)=\"onRegisterSubmit()\">\n  <div class=\"form-group\">\n    <label>Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Username</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Email</label>\n    <input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\">\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\n</form>\n\n<h2 class=\"page-header\">Manage Existing User Accounts</h2>\n<table class=\"table\">\n  <tr>\n    <th>Username</th>\n    <th>Name</th>\n    <th>Email</th>\n    <th>Active</th>\n    <th>Admin</th>\n    <th>Delete</th>\n</tr>\n<tr *ngFor=\"let thisuser of user\">\n  <td >{{thisuser.username}}</td>\n  <td >{{thisuser.name}}</td>\n  <td >{{thisuser.email}}</td>\n  <td *ngIf=\"thisuser.isActive;\"><label><input type=\"checkbox\" value=\"\" checked (click)=\"disableAccount(thisuser.id)\"></label></td>\n  <td *ngIf=\"!(thisuser.isActive);\"><label><input type=\"checkbox\" value=\"\" (click)=\"enableAccount(thisuser.id)\"></label></td>\n  <td *ngIf=\"thisuser.isAdmin;\"><label><input type=\"checkbox\" value=\"\" checked (click)=\"disableAdmin(thisuser.id)\"></label></td>\n  <td *ngIf=\"!(thisuser.isAdmin);\"><label><input type=\"checkbox\" value=\"\" (click)=\"enableAdmin(thisuser.id)\"></label></td>\n\n  <td ><a [routerLink]=\"\" (click)=\"deleteAccount(thisuser.id)\">Delete</a></td>\n</tr>\n</table>\n"
 
 /***/ }),
 
@@ -833,6 +836,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+var api = "http://localhost:8080/API/";
 var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
@@ -842,13 +846,13 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.post('API/register', user, { headers: headers })
+        return this.http.post(api + 'register', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('API/authenticate', user, { headers: headers })
+        return this.http.post(api + 'authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.getProfile = function () {
@@ -856,7 +860,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('API/profile', { headers: headers })
+        return this.http.get(api + 'profile', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -870,7 +874,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('API/getAllUsers', { headers: headers })
+        return this.http.get(api + 'getAllUsers', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.getAllAssetBundles = function () {
@@ -878,7 +882,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('API/getAllAssetBundles', { headers: headers })
+        return this.http.get(api + 'getAllAssetBundles', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.deleteUser = function (id) {
@@ -886,7 +890,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.post('API/deleteUser', id, { headers: headers })
+        return this.http.post(api + 'deleteUser', id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.removeBundle = function (id) {
@@ -894,7 +898,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.post('API/removeBundle', id, { headers: headers })
+        return this.http.post(api + 'removeBundle', id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.disableAccount = function (id) {
@@ -902,7 +906,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.post('API/disableAccount', id, { headers: headers })
+        return this.http.post(api + 'disableAccount', id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.enableAccount = function (id) {
@@ -910,7 +914,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.post('API/enableAccount', id, { headers: headers })
+        return this.http.post(api + 'enableAccount', id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.disableAdmin = function (id) {
@@ -918,7 +922,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.post('API/disableAdmin', id, { headers: headers })
+        return this.http.post(api + 'disableAdmin', id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.enableAdmin = function (id) {
@@ -926,7 +930,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.post('API/enableAdmin', id, { headers: headers })
+        return this.http.post(api + 'enableAdmin', id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.uploadBundle = function (formData) {
@@ -934,7 +938,7 @@ var AuthService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.loadToken();
         headers.append('Authorization', this.authToken);
-        return this.http.post('API/uploadAsset', formData, { headers: headers })
+        return this.http.post(api + 'uploadAsset', formData, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loadToken = function () {
