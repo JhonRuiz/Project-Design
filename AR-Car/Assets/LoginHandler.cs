@@ -15,11 +15,21 @@ public class LoginHandler : MonoBehaviour {
     public GameObject message;
     private string json;
 
+    public GameObject camera;
+    public GameObject LoginCanvas;
+
 
 
 	// Use this for initialization
 	void Start () {
-		
+		if (Globals.authKey == null) {
+                LoginCanvas.SetActive(true);
+                camera.GetComponent<Animator>().ResetTrigger("isLoggedIn");
+        }
+        else {
+            LoginCanvas.SetActive(false);
+            camera.GetComponent<Animator>().SetTrigger("isLoggedIn");
+        }
 	}
 	
 	// Update is called once per frame
@@ -58,8 +68,8 @@ public class LoginHandler : MonoBehaviour {
                 Debug.Log("Received: " + uwr.downloadHandler.text);
                 json = uwr.downloadHandler.text;
                 Globals.authKey = JSON.Parse(json)["token"];
-                Debug.Log(Globals.authKey);
-                SceneManager.LoadScene("3D_SCENE TEST", LoadSceneMode.Single);
+                LoginCanvas.SetActive(false);
+            camera.GetComponent<Animator>().SetTrigger("isLoggedIn");
             }
             else
             {

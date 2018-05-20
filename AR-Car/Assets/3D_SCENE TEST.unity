@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2414,7 +2414,7 @@ Animator:
   m_GameObject: {fileID: 146863327}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 714542e1b264e4846917d6ac0fd46dba, type: 3}
-  m_Controller: {fileID: 9100000, guid: 94a4e36714e5d7e49907cea1252d5d16, type: 2}
+  m_Controller: {fileID: 9100000, guid: 00900f8e775cb8842997ff780d2624dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6871,30 +6871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9fb044836305f4d98281965529a968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IgnoreIfOverGui: 0
-  IgnoreIfStartedOverGui: 0
-  RequiredTapCount: 2
-  RequiredTapInterval: 2
-  OnFingerTap:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1596619914}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Lean.Touch.Tap_Open_Door+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  door_front_l: {fileID: 0}
-  door_front_r: {fileID: 0}
-  door_back_l: {fileID: 0}
-  door_back_r: {fileID: 0}
 --- !u!1 &470930361
 GameObject:
   m_ObjectHideFlags: 0
@@ -7318,21 +7294,21 @@ RectTransform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492790265}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.58}
+  m_LocalScale: {x: 0.0008, y: 0.0008, z: 0}
   m_Children:
   - {fileID: 500735352}
   - {fileID: 642205235}
   - {fileID: 1395224034}
   m_Father: {fileID: 860832146}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.5, y: -0.31}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492790267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7381,8 +7357,8 @@ Canvas:
   m_GameObject: {fileID: 492790265}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 2
+  m_Camera: {fileID: 1556468817}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -7548,8 +7524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee289a9fe10fe44082316fc675e3007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door_isOpen: 1
-  doorSwatch: {fileID: 1147072762}
 --- !u!1 &509889318
 GameObject:
   m_ObjectHideFlags: 0
@@ -7787,7 +7761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &520797480
 Animator:
   serializedVersion: 3
@@ -7798,7 +7772,7 @@ Animator:
   m_GameObject: {fileID: 520797479}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: bad4d78a0e4a57942a24495cf920111a, type: 3}
-  m_Controller: {fileID: 9100000, guid: eb5d6e8ef5798d243a4b8ca3fe612373, type: 2}
+  m_Controller: {fileID: 9100000, guid: 89ae43c1473f98e4ea1e1675deb93f26, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11597,7 +11571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -376.50012, y: 0.000015258789}
+  m_AnchoredPosition: {x: -376.49997, y: 0.000015258789}
   m_SizeDelta: {x: 0, y: 180}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &795962986
@@ -14058,7 +14032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &961035664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14093,7 +14067,7 @@ Animator:
   m_GameObject: {fileID: 961035663}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0a47acb7f82d4db498c45a99d1bee5cf, type: 2}
+  m_Controller: {fileID: 9100000, guid: b3e82ee0a038b7041916a2ffe77bfe9b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -16980,8 +16954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee289a9fe10fe44082316fc675e3007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door_isOpen: 0
-  doorSwatch: {fileID: 1147072762}
 --- !u!114 &1150729637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16993,30 +16965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9fb044836305f4d98281965529a968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IgnoreIfOverGui: 0
-  IgnoreIfStartedOverGui: 0
-  RequiredTapCount: 0
-  RequiredTapInterval: 0
-  OnFingerTap:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 500735353}
-        m_MethodName: door_changeState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Lean.Touch.Tap_Open_Door+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  door_front_l: {fileID: 0}
-  door_front_r: {fileID: 0}
-  door_back_l: {fileID: 0}
-  door_back_r: {fileID: 0}
 --- !u!1 &1152452412
 GameObject:
   m_ObjectHideFlags: 0

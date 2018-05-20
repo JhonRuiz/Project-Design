@@ -12,7 +12,21 @@ public class downloadHandler : MonoBehaviour {
 
     public ButtonListControl btnListCtrl;
     
+
+    #if UNITY_IOS
+    string platform = "iOS";
+    #endif
+    #if UNITY_ANDROID
+    string platform = "Android";
+    #endif
+    #if UNITY_STANDALONE_WIN
+    string platform = "Windows";
+    #endif
+    
+    
     private void Start() {
+        
+
         GetCloudBundles();
         //StartDownload();
     }
@@ -39,10 +53,11 @@ public class downloadHandler : MonoBehaviour {
                 for (int i = 0; i < JSON.Parse(json)["bundles"].Count; i++) {
                     Debug.Log(JSON.Parse(json)["bundles"][i]["title"]);
                 }
-
+                Debug.Log("The platform is " +platform);
                 for (int i = 0; i < JSON.Parse(json)["bundles"].Count; ++i)
             {
-                //Create a new button from the buttonTemplate game object
+                if (JSON.Parse(json)["bundles"][i]["platform"] == platform) {
+                    //Create a new button from the buttonTemplate game object
                 GameObject button = Instantiate(buttonTemplate) as GameObject;
                 //Set the new button to active
                 button.SetActive(true);
@@ -53,6 +68,10 @@ public class downloadHandler : MonoBehaviour {
 
                 //Set the parent of the button to the same parent as the button template.
                 button.transform.SetParent(buttonTemplate.transform.parent, false);
+
+
+                }
+                
             }
 
             }

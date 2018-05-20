@@ -22,6 +22,11 @@ public class menu : MonoBehaviour {
         if (scene.name == "3D_SCENE TEST")
         {
             ToggleColourSelector();
+            
+
+
+
+
         }
         
 

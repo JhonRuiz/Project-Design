@@ -1356,3 +1356,4 @@ MonoBehaviour:
   carBody: {fileID: 1796325766575686}
   carBodyTextureOffset: {x: 0.16, y: 0.16}
   carDoorTextureOffset: {x: 0.16, y: 0.16}
+  doorAnimationsClose: {fileID: 0}
