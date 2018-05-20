@@ -26,12 +26,14 @@ public class downloadHandler : MonoBehaviour {
     
     private void Start() {
         
-
-        GetCloudBundles();
-        //StartDownload();
+        if (Globals.authKey != null) {
+            GetCloudBundles();
+        }
+        
+        
     }
 
-    private void GetCloudBundles() {
+    public void GetCloudBundles() {
         string API = Globals.API +"getAllAssetBundles";
         var form = new WWWForm();
         Dictionary<string, string> headers = new Dictionary<string,string>();

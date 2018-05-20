@@ -17,7 +17,7 @@ public class LoginHandler : MonoBehaviour {
 
     public GameObject camera;
     public GameObject LoginCanvas;
-
+    public GameObject CloudConectivity;
 
 
 	// Use this for initialization
@@ -69,7 +69,8 @@ public class LoginHandler : MonoBehaviour {
                 json = uwr.downloadHandler.text;
                 Globals.authKey = JSON.Parse(json)["token"];
                 LoginCanvas.SetActive(false);
-            camera.GetComponent<Animator>().SetTrigger("isLoggedIn");
+                camera.GetComponent<Animator>().SetTrigger("isLoggedIn");
+                CloudConectivity.GetComponent<downloadHandler>().GetCloudBundles();
             }
             else
             {
