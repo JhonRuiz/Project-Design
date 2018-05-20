@@ -121,7 +121,7 @@ public class CarControl : MonoBehaviour
         Vector3 curPos = new Vector3(Input.mousePosition.x - posX,
                      Input.mousePosition.y - posY, dist.z);
         Debug.Log(posX + "and" + curPos.x);
-        carObject.transform.Rotate(0, curPos.x / 300, 0);
+        carObject.transform.Rotate(0, -curPos.x / 300, 0);
     }
 }
 
