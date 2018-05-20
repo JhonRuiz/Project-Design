@@ -3,7 +3,7 @@ import { Http, Headers} from "@angular/http";
 import 'rxjs/add/operator/map';
 import { tokenNotExpired} from 'angular2-jwt';
 
-let api = "http://localhost:8080/API/";
+let api = "/API/";
 
 
 @Injectable()

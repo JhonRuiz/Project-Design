@@ -1,8 +1,8 @@
 module.exports = {
-    database: 'arcar',
-    host: 'test-id-azure.documents.azure.com',
-    username: 'test-id-azure',
-    password: 'jBjv01h0WR3OCJsRorcW7kO4HeewDeDLIndm1DvPm9hjU7sNH4P73cUiTLl85Z108e1QKHuSenTdL4oQXjnqyA==',
+    database: 'carapp',
+    host: 'carapptest.documents.azure.com',
+    username: 'carapptest',
+    password: 'Xp1pEqOrOrA28EOsbwvH4yCNomwSDgGD1IuGjU63O2mVXsqE9Ak2Hkqyq4jVr4ymNu4YJ8EWIJYQ4K2LUkOjzQ==',
     port: '10255',
     options: 'ssl=true&replicaSet=globaldb',
     secret: 'yoursecret'

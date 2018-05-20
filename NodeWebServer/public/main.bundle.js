@@ -836,7 +836,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var api = "http://localhost:8080/API/";
+var api = "/API/";
 var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;

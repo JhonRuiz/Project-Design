@@ -1,0 +1,8 @@
+{
+     "name": "Default Administrator",
+     "email": "administrator@noemail.com",
+	 "username": "admin",
+	 "password": "$2a$10$nE833ezlGCs8xN.NmHSX3OQdyseLMA355bNKCHCpN33NhYU.RHvUS",
+	 "isAdmin": true,
+	 "isActive": true
+}
