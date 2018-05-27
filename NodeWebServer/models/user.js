@@ -42,11 +42,13 @@ module.exports.getUserById = function(id, callback) {
 //Retrieve all users in database
 module.exports.getAllUsers = function(callback) {
     //Find all user database objects
+    
     User.find({}, callback);
 }
 
 //Search for user by username
 module.exports.getUserByUsername = function(username, callback) {
+
     const query = {username: username};
     //Get the first user retrieved with matching username
     User.findOne(query, callback);

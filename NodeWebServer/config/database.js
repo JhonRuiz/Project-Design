@@ -1,9 +1,9 @@
 module.exports = {
-    database: 'carapp',
-    host: 'carapptest.documents.azure.com',
-    username: 'carapptest',
-    password: 'Xp1pEqOrOrA28EOsbwvH4yCNomwSDgGD1IuGjU63O2mVXsqE9Ak2Hkqyq4jVr4ymNu4YJ8EWIJYQ4K2LUkOjzQ==',
-    port: '10255',
-    options: 'ssl=true&replicaSet=globaldb',
+    database: 'ARCar',
+    host: '10.138.100.80',
+    username: 'AdminMicah',
+    password: 'h1B9#Myh2OsN5r0f',
+    port: '27017',
+    options: '',
     secret: 'yoursecret'
 }

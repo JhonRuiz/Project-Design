@@ -22,10 +22,11 @@ const port = process.env.PORT || 8080;
 
 
 // Connect to Database
-mongoose.connect('mongodb://' + config.host + ':' + config.port + '/'+config.database+'?' + config.options + '', {
+mongoose.connect('mongodb://' + config.host + ':' + config.port + '/'+ config.database, {
     auth: {
       user: config.username,
-      password: config.password
+      password: config.password,
+      authdb: "admin"
     }
 });
 

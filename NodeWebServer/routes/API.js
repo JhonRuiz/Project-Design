@@ -71,7 +71,9 @@ router.post('/authenticate', function(req, res, next) {
     //Set username and password vars
     const username = req.body.username;
     const password = req.body.password;
-
+    User.find({}, function(err, users) {
+        console.log(users);
+    })
     //Pass username to User model to verify user exists
     User.getUserByUsername(username, function(err, user){
         //Check for error
