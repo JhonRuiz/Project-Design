@@ -6,7 +6,7 @@ public class Globals : MonoBehaviour {
 
     public static Material currentMaterial;
     public static int curentCar;
-    public static string authKey;
+    public static string authKey = "ab";
     public static string API = "https://carwebappnew.azurewebsites.net/API/";
 
     // Use this for initialization
