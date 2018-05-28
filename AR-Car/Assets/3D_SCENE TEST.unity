@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4304083, g: 0.46535784, b: 0.49721044, a: 1}
+  m_IndirectSpecularColor: {r: 0.43040803, g: 0.46535748, b: 0.49720997, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2273,7 +2273,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146863327}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -901.403, y: -400.192, z: -0.0085}
+  m_LocalPosition: {x: -901.393, y: -400.192, z: -0.097}
   m_LocalScale: {x: 0.40000024, y: 0.4, z: 0.40000024}
   m_Children:
   - {fileID: 1808641567}
@@ -2331,7 +2331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &146863328
 Transform:
   m_ObjectHideFlags: 0
@@ -2438,7 +2438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: 
   carObject: {fileID: 146863327}
-  carImage: {fileID: 21300000, guid: c1d88272512ca0245a512e6c3e30b639, type: 3}
+  carImage: {fileID: 21300000, guid: 9012cc143c83d8440bab6e812410aada, type: 3}
   carDoorsArray:
   - {fileID: 899953163}
   - {fileID: 1074251360}
@@ -7765,7 +7765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &520797480
 Animator:
   serializedVersion: 3
@@ -7811,7 +7811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: GT86
   carObject: {fileID: 520797479}
-  carImage: {fileID: 21300000, guid: 199a5c0ccfa614c46a60bd1b07ef5cab, type: 3}
+  carImage: {fileID: 21300000, guid: 95883f3ca8ebfe9419233bb7b4b1876c, type: 3}
   carDoorsArray:
   - {fileID: 1519398727}
   - {fileID: 669502150}
@@ -9867,9 +9867,9 @@ RectTransform:
   m_Father: {fileID: 795962985}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 90, y: -90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664746379
@@ -14182,7 +14182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: Rav4
   carObject: {fileID: 961035663}
-  carImage: {fileID: 21300000, guid: 190401e772dc60a40a329ad101a0d643, type: 3}
+  carImage: {fileID: 21300000, guid: 93dabf12dcdb9fb47bd8ce30ceb4c5bc, type: 3}
   carDoorsArray:
   - {fileID: 457874766}
   - {fileID: 1287843659}
@@ -15368,9 +15368,9 @@ RectTransform:
   m_Father: {fileID: 795962985}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 90, y: -90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1060498532
@@ -17492,8 +17492,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 961035663}
-  m_LocalRotation: {x: 1.4145958e-15, y: 0.9444459, z: 0.00000011258671, w: 0.32866699}
-  m_LocalPosition: {x: -901.41, y: -400.186, z: -0.0085}
+  m_LocalRotation: {x: 9.127618e-16, y: 0.69792414, z: 0.00000008319903, w: 0.71617174}
+  m_LocalPosition: {x: -901.415, y: -400.186, z: -0.018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1147072766}
@@ -17506,7 +17506,7 @@ Transform:
   - {fileID: 1139453874}
   m_Father: {fileID: 473270051}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 141.62401, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 88.521, z: 0}
 --- !u!4 &1166891979
 Transform:
   m_ObjectHideFlags: 0
@@ -19374,7 +19374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1336023241
 Transform:
   m_ObjectHideFlags: 0
@@ -23733,7 +23733,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 520797479}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -901.41, y: -400.186, z: -0.0085}
+  m_LocalPosition: {x: -901.41, y: -400.186, z: -0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406387626}
