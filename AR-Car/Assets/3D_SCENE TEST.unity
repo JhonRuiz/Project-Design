@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43040803, g: 0.46535748, b: 0.49720997, a: 1}
+  m_IndirectSpecularColor: {r: 0.4304083, g: 0.46535784, b: 0.49721044, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -7298,7 +7298,7 @@ RectTransform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492790265}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.9859524, z: -0.16702688, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 1.58}
   m_LocalScale: {x: 0.0008, y: 0.0008, z: 0}
   m_Children:
@@ -7307,10 +7307,10 @@ RectTransform:
   - {fileID: 1395224034}
   m_Father: {fileID: 860832146}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 19.23, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.5, y: -0.31}
+  m_AnchoredPosition: {x: 0.5, y: -0.2}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492790267
@@ -8500,7 +8500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.00010681152}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &567118183
@@ -22293,13 +22293,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1556468813}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -6.79, y: 0.266, z: -0.717}
+  m_LocalRotation: {x: 0.118105836, y: 0.6971736, z: -0.118105836, w: 0.6971736}
+  m_LocalPosition: {x: -6.78, y: 0.54, z: -0.716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 66099790}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 19.23, y: 90, z: 0}
 --- !u!81 &1556468815
 AudioListener:
   m_ObjectHideFlags: 0
