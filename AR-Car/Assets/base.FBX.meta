@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 241cc6e526ee5e9419b42f9823c5ebd8
+timeCreated: 1527609176
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: base
+    100004: "VR_\u5149\u6E90035"
+    100006: "VR_\u5149\u6E90036"
+    100008: "VR_\u5149\u6E90037"
+    100010: "VR_\u5149\u6E90038"
+    100012: "VR_\u5149\u6E90039"
+    100014: "VR_\u5149\u6E90040"
+    100016: "VR_\u5149\u6E90041"
+    100018: "VR_\u5149\u6E90042"
+    100020: "VR_\u5149\u6E90043"
+    100022: "VR_\u5149\u6E90044"
+    100024: "VR_\u5149\u6E90045"
+    100026: "VR_\u5149\u6E90046"
+    100028: "VR_\u5149\u6E90047"
+    100030: "VR_\u5149\u6E90048"
+    100032: "VR_\u5149\u6E90049"
+    100034: "VR_\u5149\u6E90050"
+    100036: "VR_\u5149\u6E90051"
+    100038: "VR_\u5149\u6E90052"
+    100040: "VR_\u5149\u6E90053"
+    100042: "VR_\u5149\u6E90054"
+    100044: "VR_\u5149\u6E90056"
+    100046: "VR_\u5149\u6E90057"
+    100048: "VR_\u5149\u6E90058"
+    100050: "VR_\u5149\u6E90060"
+    100052: "VR_\u5149\u6E90061"
+    100054: "VR_\u5149\u6E90062"
+    100056: "VR_\u5149\u6E90063"
+    100058: "VR_\u5149\u6E90065"
+    100060: "VR_\u5149\u6E90066"
+    100062: "VR_\u5149\u6E90067"
+    100064: "VR_\u5149\u6E90068"
+    100066: "VR_\u5149\u6E90069"
+    100068: "VR_\u5149\u6E90070"
+    100070: "\u7EC43651"
+    400000: //RootNode
+    400002: base
+    400004: "VR_\u5149\u6E90035"
+    400006: "VR_\u5149\u6E90036"
+    400008: "VR_\u5149\u6E90037"
+    400010: "VR_\u5149\u6E90038"
+    400012: "VR_\u5149\u6E90039"
+    400014: "VR_\u5149\u6E90040"
+    400016: "VR_\u5149\u6E90041"
+    400018: "VR_\u5149\u6E90042"
+    400020: "VR_\u5149\u6E90043"
+    400022: "VR_\u5149\u6E90044"
+    400024: "VR_\u5149\u6E90045"
+    400026: "VR_\u5149\u6E90046"
+    400028: "VR_\u5149\u6E90047"
+    400030: "VR_\u5149\u6E90048"
+    400032: "VR_\u5149\u6E90049"
+    400034: "VR_\u5149\u6E90050"
+    400036: "VR_\u5149\u6E90051"
+    400038: "VR_\u5149\u6E90052"
+    400040: "VR_\u5149\u6E90053"
+    400042: "VR_\u5149\u6E90054"
+    400044: "VR_\u5149\u6E90056"
+    400046: "VR_\u5149\u6E90057"
+    400048: "VR_\u5149\u6E90058"
+    400050: "VR_\u5149\u6E90060"
+    400052: "VR_\u5149\u6E90061"
+    400054: "VR_\u5149\u6E90062"
+    400056: "VR_\u5149\u6E90063"
+    400058: "VR_\u5149\u6E90065"
+    400060: "VR_\u5149\u6E90066"
+    400062: "VR_\u5149\u6E90067"
+    400064: "VR_\u5149\u6E90068"
+    400066: "VR_\u5149\u6E90069"
+    400068: "VR_\u5149\u6E90070"
+    400070: "\u7EC43651"
+    2100000: No Name
+    2300000: base
+    3300000: base
+    4300000: base
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
