@@ -7765,7 +7765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &520797480
 Animator:
   serializedVersion: 3
@@ -8500,7 +8500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &567118183
@@ -8903,8 +8903,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.97794116, g: 0.9159422, b: 0.7909818, a: 1}
-  m_Intensity: 0.5
+  m_Color: {r: 1, g: 0.8146844, b: 0.44117647, a: 1}
+  m_Intensity: 0.08
   m_Range: 10
   m_SpotAngle: 101
   m_CookieSize: 10
@@ -12539,8 +12539,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.7794118, g: 0.6665523, b: 0.46993947, a: 1}
-  m_Intensity: 0.5
+  m_Color: {r: 1, g: 0.8156863, b: 0.4392157, a: 1}
+  m_Intensity: 0.86
   m_Range: 10
   m_SpotAngle: 20
   m_CookieSize: 10
@@ -15657,7 +15657,7 @@ Light:
     m_Strength: 1
     m_Bias: 0
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.01
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
